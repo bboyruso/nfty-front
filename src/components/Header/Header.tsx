@@ -1,11 +1,14 @@
+import { NavLink } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): React.ReactElement => {
   return (
     <HeaderStyled>
-      <a href="/" className="brand-name">
+      <NavLink to="/" className="brand-name">
         NFTIFY
-      </a>
+      </NavLink>
+      <Navbar />
     </HeaderStyled>
   );
 };

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-   
+    font-family: 'Inter';
   }
 
   h1,
