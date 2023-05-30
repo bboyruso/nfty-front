@@ -7,6 +7,10 @@ const ButtonStyled = styled.button`
   font-size: ${(props) => props.theme.fontSizes.medium};
   width: 100px;
   height: 50px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
 `;
 
 export default ButtonStyled;
