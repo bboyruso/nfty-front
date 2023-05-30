@@ -10,11 +10,11 @@ import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <Provider store={store}>
         <RouterProvider router={appRouter} />
-      </ThemeProvider>
-    </Provider>
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
