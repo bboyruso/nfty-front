@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-*,
+  *,
   ::before,
   ::after {
     box-sizing: border-box;
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   h2,
   h3,
   h4
- {
+  {
     margin: 0;
     font : inherit;
   }
