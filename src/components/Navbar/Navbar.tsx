@@ -8,8 +8,8 @@ const Navbar = (): React.ReactElement => {
       <NavLink to="/create" className="nav-link">
         Create
       </NavLink>
-      <NavLink to="/logout" className="nav-link">
-        Logout
+      <NavLink to="/" className="nav-link">
+        Home
       </NavLink>
     </NavbarStyled>
   );
