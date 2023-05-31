@@ -17,5 +17,5 @@ const nftsSlice = createSlice({
   },
 });
 
-export const { loadNfts } = nftsSlice.actions;
+export const { loadNfts: loadNftsActionCreator } = nftsSlice.actions;
 export const nftsReducer = nftsSlice.reducer;
