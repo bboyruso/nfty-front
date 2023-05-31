@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NavbarStyled = styled.div`
+const NavbarStyled = styled.nav`
   display: flex;
   gap: 20px;
   justify-content: center;
