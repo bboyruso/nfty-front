@@ -4,16 +4,29 @@ const HeaderStyled = styled.header`
   border-bottom: 1px solid #000;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 15px;
 
   .brand-name {
+    letter-spacing: 2px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     line-height: 54px;
     color: #000000;
+  }
+
+  @media only screen and (max-width: 430px) {
+    .brand-name {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 54px;
+      color: #000000;
+    }
   }
 `;
 
