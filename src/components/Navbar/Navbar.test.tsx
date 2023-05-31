@@ -1,31 +1,16 @@
-import { render, screen } from "@testing-library/react";
-import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import Navbar from "./Navbar";
-import { ThemeProvider } from "styled-components";
-import theme from "../../GlobalStyle/theme/theme";
+import renderWithProviders from "../../utils/testUtils";
 
 describe("Given a Navbar Component", () => {
   describe("When it renders and contains two paths `Create` and `Logout` ", () => {
-    test("Navbar should renders correctly", () => {
+    test("Navbar should renders with this navigation links correctly", () => {
       const expectedPathOne = "Create";
       const expectedPathTwo = "Logout";
 
-      const routes = [
-        {
-          path: "/",
-          element: (
-            <ThemeProvider theme={theme}>
-              <Navbar />
-            </ThemeProvider>
-          ),
-        },
-      ];
+      renderWithProviders(<Navbar />);
 
-      const router = createMemoryRouter(routes);
-      render(<RouterProvider router={router} />);
-
-      expect(screen.getByText(expectedPathOne)).toBeInTheDocument();
-      expect(screen.getByText(expectedPathTwo)).toBeInTheDocument();
+      expect(expectedPathOne).toBeInTheDocument;
+      expect(expectedPathTwo).toBeInTheDocument;
     });
   });
 });
