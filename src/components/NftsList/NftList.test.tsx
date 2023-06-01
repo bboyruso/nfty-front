@@ -8,7 +8,7 @@ describe("Given a NFT List Component", () => {
       const firstTitle = "First NFT";
       const secondTitle = "Another NFT";
 
-      renderWithProviders(wrapWithRouter(<NftsList nfts={nftsMock.nfts} />));
+      renderWithProviders(wrapWithRouter(<NftsList nfts={nftsMock} />));
 
       expect(firstTitle).toBeInTheDocument;
       expect(secondTitle).toBeInTheDocument;
