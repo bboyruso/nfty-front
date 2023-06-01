@@ -1,4 +1,5 @@
 import { NftStructure } from "../../types";
+import NftCard from "../NftCard/NftCard";
 import NftsListStyled from "./NftsListStyled";
 
 interface NftsListProps {
@@ -9,7 +10,9 @@ const NftsList = ({ nfts }: NftsListProps) => {
   return (
     <NftsListStyled>
       {nfts.map((nfts) => (
-        <li key={nfts._id}></li>
+        <li key={nfts._id}>
+          <NftCard nft={nfts} />
+        </li>
       ))}
     </NftsListStyled>
   );
