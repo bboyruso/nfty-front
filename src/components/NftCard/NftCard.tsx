@@ -13,7 +13,7 @@ const NftCard = ({
       <img src={image} alt={title} />
       <div className="card-info">
         {title}
-        {price}
+        {price} ETH
         {author}
       </div>
     </NftCardStyled>
