@@ -9,7 +9,7 @@ describe("Given a loadNftsReducer", () => {
 
       const currentNftsState: NftsState = { nfts: currentNfts };
 
-      const newNfts: NftStructure[] = nftsMock.nfts;
+      const newNfts: NftStructure[] = nftsMock;
 
       const loadNftsAction = loadNftsActionCreator(newNfts);
 

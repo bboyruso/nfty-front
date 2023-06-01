@@ -6,15 +6,17 @@ import useApi from "./useApi";
 describe("Given a useApi function", () => {
   describe("When it is called the function getNfts", () => {
     test("Then it should return a list of nfts", async () => {
-      const expectedNfts: NftStructure[] = nftsMock.nfts;
+      const expectedNfts: NftStructure[] = nftsMock;
 
       const {
-        result: { current: getNfts },
+        result: {
+          current: { getNfts },
+        },
       } = renderHook(() => useApi());
 
       const nfts = await getNfts();
 
-      expect(nfts.nfts).toStrictEqual(expectedNfts);
+      expect(nfts).toStrictEqual(expectedNfts);
     });
   });
 });

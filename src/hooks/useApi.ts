@@ -1,14 +1,15 @@
 import { useCallback } from "react";
-import { NftsState } from "../types";
+import { NftStructure } from "../types";
 import axios from "axios";
-import { apiUrl } from "../mocks/handlers";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const useApi = () => {
-  const getNfts = useCallback(async (): Promise<NftsState> => {
-    const { data: nfts } = await axios.get<NftsState>(`${apiUrl}nfts`);
+  const getNfts = useCallback(async (): Promise<NftStructure[]> => {
+    const { data: nfts } = await axios.get<NftStructure[]>(`${apiUrl}nfts`);
     return nfts;
   }, []);
-  return getNfts;
+  return { getNfts };
 };
 
 export default useApi;
