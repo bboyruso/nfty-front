@@ -1,4 +1,4 @@
-export interface NftsStructure {
+export interface NftStructure {
   _id: string;
   title: string;
   image: string;
@@ -8,5 +8,5 @@ export interface NftsStructure {
 }
 
 export interface NftsState {
-  nfts: NftsStructure[];
+  nfts: NftStructure[];
 }
