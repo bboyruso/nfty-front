@@ -1,8 +1,8 @@
-import { NftsStructure } from "../../types";
+import { NftStructure } from "../../types";
 import NftsListStyled from "./NftsListStyled";
 
 interface NftsListProps {
-  nfts: NftsStructure[];
+  nfts: NftStructure[];
 }
 
 const NftsList = ({ nfts }: NftsListProps) => {
