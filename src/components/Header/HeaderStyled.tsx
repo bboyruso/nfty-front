@@ -28,6 +28,15 @@ const HeaderStyled = styled.header`
       color: #000000;
     }
   }
+
+  @media only screen and (max-width: 360px) {
+    padding: 0;
+
+    .brand-name {
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+  }
 `;
 
 export default HeaderStyled;
