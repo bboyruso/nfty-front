@@ -8,9 +8,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-
   body {
-    margin: 0;
+    margin: 20px;
     font-family: 'Inter';
   }
 
@@ -57,6 +56,12 @@ const GlobalStyle = createGlobalStyle`
   img{
     max-width: 100%;
     padding: 0;
+  }
+
+    @media only screen and (max-width: 380px) {
+  body {
+    margin: 10px;
+  }
   }
 
 
