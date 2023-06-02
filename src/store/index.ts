@@ -3,9 +3,11 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { nftsReducer } from "./nfts/nftsSlice";
+import { loadingReducer } from "./loading/loadingSlice";
 
 const rootReducer = combineReducers({
   nftsStore: nftsReducer,
+  loaderStore: loadingReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
