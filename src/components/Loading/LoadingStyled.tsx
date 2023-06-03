@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 const LoadingStyled = styled.div`
   .lds-ripple {
-    display: inline-block;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     width: 80px;
     height: 80px;
   }
