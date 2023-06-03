@@ -2,6 +2,7 @@ import { renderHook } from "@testing-library/react";
 import { nftsMock } from "../mocks/nftsMock";
 import { NftStructure } from "../types";
 import useApi from "./useApi";
+import { wrapWithProvider } from "../utils/testUtils";
 
 describe("Given a useApi function", () => {
   describe("When it is called the function getNfts", () => {
@@ -12,7 +13,9 @@ describe("Given a useApi function", () => {
         result: {
           current: { getNfts },
         },
-      } = renderHook(() => useApi());
+      } = renderHook(() => useApi(), {
+        wrapper: wrapWithProvider,
+      });
 
       const nfts = await getNfts();
 
