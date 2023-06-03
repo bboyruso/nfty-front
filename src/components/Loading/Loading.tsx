@@ -2,7 +2,7 @@ import LoadingStyled from "./LoadingStyled";
 
 const Loading = (): React.ReactElement => {
   return (
-    <LoadingStyled>
+    <LoadingStyled aria-label="loading animation">
       <div className="lds-ripple">
         <div></div>
         <div></div>
