@@ -1,5 +1,6 @@
 import { renderWithProviders, wrapWithRouter } from "../../utils/testUtils";
 import Navbar from "./Navbar";
+import { screen } from "@testing-library/react";
 
 describe("Given a Navbar Component", () => {
   describe("When it renders and contains two paths `Create` and `Logout` ", () => {
@@ -9,8 +10,16 @@ describe("Given a Navbar Component", () => {
 
       renderWithProviders(wrapWithRouter(<Navbar />));
 
-      expect(expectedPathOne).toBeInTheDocument;
-      expect(expectedPathTwo).toBeInTheDocument;
+      const firstLink = screen.getByRole("link", {
+        name: expectedPathOne,
+      });
+
+      const secondLink = screen.getByRole("link", {
+        name: expectedPathTwo,
+      });
+
+      expect(firstLink).toBeInTheDocument();
+      expect(secondLink).toBeInTheDocument();
     });
   });
 });

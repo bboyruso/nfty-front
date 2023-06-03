@@ -1,6 +1,7 @@
 import { nftsMock } from "../../mocks/nftsMock";
 import { renderWithProviders, wrapWithRouter } from "../../utils/testUtils";
 import NftsList from "./NftsList";
+import { screen } from "@testing-library/react";
 
 describe("Given a NFT List Component", () => {
   describe("When it receives a list with two NFTs with title `First NFT` and `Another NFT`", () => {
@@ -10,8 +11,11 @@ describe("Given a NFT List Component", () => {
 
       renderWithProviders(wrapWithRouter(<NftsList nfts={nftsMock} />));
 
-      expect(firstTitle).toBeInTheDocument;
-      expect(secondTitle).toBeInTheDocument;
+      const firstLink = screen.getByText(firstTitle);
+      const secondLink = screen.getByText(secondTitle);
+
+      expect(firstLink).toBeInTheDocument();
+      expect(secondLink).toBeInTheDocument();
     });
   });
 });
