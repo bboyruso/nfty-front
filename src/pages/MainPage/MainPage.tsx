@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../store";
 import useApi from "../../hooks/useApi";
 import { loadNftsActionCreator } from "../../store/nfts/nftsSlice";
 import NftsList from "../../components/NftsList/NftsList";
+import Loading from "../../components/Loading/Loading";
 
 const MainPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,7 @@ const MainPage = (): React.ReactElement => {
   return (
     <>
       <h1>Main page</h1>
+      <Loading></Loading>
       <NftsList nfts={nfts}></NftsList>
     </>
   );
