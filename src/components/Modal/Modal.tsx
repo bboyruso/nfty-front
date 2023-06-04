@@ -1,24 +1,19 @@
 import ModalStyled from "./ModalStyled";
+import { ReactSVG } from "react-svg";
 
-interface ModalProps {
-  title?: string;
+export interface ModalProps {
   text: string;
-  isSuccessful: boolean;
+  isError: boolean;
 }
 
-const Modal = ({
-  text,
-  title,
-  isSuccessful = true,
-}: ModalProps): React.ReactElement => {
+const Modal = ({ text, isError }: ModalProps): React.ReactElement => {
   return (
-    <ModalStyled>
-      {title}
-      {text}
-      {isSuccessful ? (
-        <img src="../../assets/icons/done.svg" alt="done" />
+    <ModalStyled className={isError ? "error" : ""}>
+      <span>{text}</span>
+      {isError ? (
+        <ReactSVG src="src\assets\icons\error.svg"></ReactSVG>
       ) : (
-        <img src="../../assets/icons/error.svg" alt="error" />
+        <ReactSVG src="src\assets\icons\done.svg"></ReactSVG>
       )}
     </ModalStyled>
   );
