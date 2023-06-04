@@ -15,8 +15,8 @@ describe("Given a error reducer", () => {
     });
   });
 
-  describe("Given a error reducer", () => {
-    test("should handle clearError return a new state", () => {
+  describe("When the initial state with a error message is `Something went wrong`", () => {
+    test("should handle clearError return a new state without a message", () => {
       const expectedMessageValue = null;
       const currentState = {
         message: "Something went wrong",
