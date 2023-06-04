@@ -5,6 +5,7 @@ import { loadNftsActionCreator } from "../../store/nfts/nftsSlice";
 import NftsList from "../../components/NftsList/NftsList";
 import Loading from "../../components/Loading/Loading";
 import Modal from "../../components/Modal/Modal";
+import MainPageStyled from "./MainPageStyled";
 
 const MainPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -21,11 +22,11 @@ const MainPage = (): React.ReactElement => {
   }, [dispatch, getNfts]);
 
   return (
-    <main aria-label="main page">
+    <MainPageStyled aria-label="main page">
       {isLoading && <Loading />}
       {errorMessage && <Modal text={errorMessage} isError />}
       <NftsList nfts={nfts} />
-    </main>
+    </MainPageStyled>
   );
 };
 

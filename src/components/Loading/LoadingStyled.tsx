@@ -4,7 +4,7 @@ const LoadingStyled = styled.div`
   .lds-ripple {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 40%;
     width: 80px;
     height: 80px;
   }

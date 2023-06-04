@@ -20,9 +20,8 @@ const useApi = () => {
       dispatch(stopLoading());
       return nfts;
     } catch (error) {
-      dispatch(setError("Error getting NFTs"));
       dispatch(stopLoading());
-      return undefined;
+      dispatch(setError("Error getting NFTs"));
     }
   }, [dispatch]);
 
