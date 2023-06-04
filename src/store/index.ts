@@ -4,10 +4,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { nftsReducer } from "./nfts/nftsSlice";
 import { loadingReducer } from "./loading/loadingSlice";
+import errorReducer from "./error/errorSlice";
 
 const rootReducer = combineReducers({
   nftsStore: nftsReducer,
   loaderStore: loadingReducer,
+  error: errorReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
