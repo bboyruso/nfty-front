@@ -12,11 +12,11 @@ const errorSlice = createSlice({
   name: "error",
   initialState,
   reducers: {
-    setError: (state, action: PayloadAction<string>) => {
-      state.message = action.payload;
+    setError: (currentState: ErrorState, action: PayloadAction<string>) => {
+      currentState.message = action.payload;
     },
-    clearError: (state) => {
-      state.message = null;
+    clearError: (currentState: ErrorState) => {
+      currentState.message = null;
     },
   },
 });
