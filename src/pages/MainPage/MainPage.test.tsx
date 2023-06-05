@@ -10,7 +10,6 @@ describe("Given a Main Page", () => {
       renderWithProviders(wrapWithRouter(<MainPage />));
 
       const mainPage = screen.getByLabelText(expectedAriaLabel);
-
       expect(mainPage).toBeInTheDocument();
     });
   });
