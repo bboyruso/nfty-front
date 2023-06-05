@@ -11,8 +11,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 20px;
     font-family: 'Inter';
+    min-height: 100vh;
   }
-
+  
   h1,
   h2,
   h3,
@@ -57,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     padding: 0;
   }
+  
 
     @media only screen and (max-width: 380px) {
   body {

@@ -1,5 +1,11 @@
+import PageNotFoundStyled from "./PageNotFoundStyled";
+
 const PageNotFound = (): React.ReactElement => {
-  return <h1>PAGE NOT FOUND</h1>;
+  return (
+    <PageNotFoundStyled>
+      <h1>PAGE NOT FOUND</h1>
+    </PageNotFoundStyled>
+  );
 };
 
 export default PageNotFound;
