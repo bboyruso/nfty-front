@@ -1,7 +1,7 @@
 import { RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../../components/App/App";
-import PageNotFound from "../../pages/PageNotFount/PageNotFound";
-import MainPage from "../../pages/MainPage/MainPage";
+import { LazyMainPage, LazyNotFoundPage } from "../lazyPages/lazyPages";
+import { Suspense } from "react";
 
 const routes: RouteObject[] = [
   {
@@ -10,11 +10,19 @@ const routes: RouteObject[] = [
     children: [
       {
         path: "*",
-        element: <PageNotFound />,
+        element: (
+          <Suspense>
+            <LazyNotFoundPage />
+          </Suspense>
+        ),
       },
       {
         path: "/",
-        element: <MainPage />,
+        element: (
+          <Suspense>
+            <LazyMainPage />
+          </Suspense>
+        ),
       },
     ],
   },
