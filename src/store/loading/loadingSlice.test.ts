@@ -1,18 +1,20 @@
-import { loadingReducer, startLoading, stopLoading } from "./loadingSlice";
+import { hideLoading, showLoading, uiReducer } from "./loadingSlice";
 
-describe("Given a loading reducer", () => {
-  describe("When it receives a action startLoading", () => {
-    test("Should handle startLoading and return true", () => {
-      const newState = loadingReducer(false, startLoading());
+describe("Given a uiReducer", () => {
+  describe("When it receives a action showLoading", () => {
+    test("Should handle showLoading and return new state true", () => {
+      const initialState = { loading: false };
+      const newState = uiReducer(initialState, showLoading());
 
-      expect(newState).toStrictEqual(true);
+      expect(newState.loading).toStrictEqual(true);
     });
 
-    describe("When it receives a action stopLoading", () => {
-      test("Should handle stopLoading and return false", () => {
-        const newState = loadingReducer(true, stopLoading());
+    describe("When it receives a action hideLoading", () => {
+      test("Should handle hideLoading and return new state false", () => {
+        const initialState = { loading: false };
+        const newState = uiReducer(initialState, hideLoading());
 
-        expect(newState).toStrictEqual(false);
+        expect(newState.loading).toStrictEqual(false);
       });
     });
   });

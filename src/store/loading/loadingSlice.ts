@@ -1,14 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const loadingSlice = createSlice({
-  name: "loading",
-  initialState: false,
+const initialState = {
+  loading: false,
+};
+
+const uiSlice = createSlice({
+  name: "ui",
+  initialState,
   reducers: {
-    startLoading: () => true,
-    stopLoading: () => false,
+    showLoading(state) {
+      state.loading = true;
+    },
+    hideLoading(state) {
+      state.loading = false;
+    },
   },
 });
 
-export const { startLoading, stopLoading } = loadingSlice.actions;
+export const { showLoading, hideLoading } = uiSlice.actions;
 
-export const loadingReducer = loadingSlice.reducer;
+export const uiReducer = uiSlice.reducer;

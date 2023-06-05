@@ -3,12 +3,13 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { nftsReducer } from "./nfts/nftsSlice";
-import { loadingReducer } from "./loading/loadingSlice";
+
 import errorReducer from "./error/errorSlice";
+import { uiReducer } from "./loading/loadingSlice";
 
 const rootReducer = combineReducers({
   nftsStore: nftsReducer,
-  loaderStore: loadingReducer,
+  uiStore: uiReducer,
   error: errorReducer,
 });
 
