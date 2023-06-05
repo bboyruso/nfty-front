@@ -11,7 +11,7 @@ const NftCard = ({
 }: NftCardProps): React.ReactElement => {
   return (
     <NftCardStyled>
-      <img src={image} alt={title} />
+      <img src={image} alt={title} width={300} height={300} />
       <div className="card-info">
         <span className="title">{title}</span>
         <span className="author"> by {author}</span>

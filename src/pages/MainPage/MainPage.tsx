@@ -16,7 +16,9 @@ const MainPage = (): React.ReactElement => {
     (async () => {
       const nfts = await getNfts();
 
-      if (nfts) dispatch(loadNftsActionCreator(nfts));
+      if (nfts) {
+        dispatch(loadNftsActionCreator(nfts));
+      }
     })();
   }, [dispatch, getNfts]);
 

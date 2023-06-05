@@ -17,4 +17,12 @@ export const nftsMock: NftStructure[] = [
     image: "url/1.webp",
     author: "Angelina",
   },
+  {
+    _id: "64710077b5f9829cfe43b644",
+    title: "Another NFT 2",
+    description: "best nft witch you never see before",
+    price: 22,
+    image: "url/1.webp",
+    author: "Angelina",
+  },
 ];
