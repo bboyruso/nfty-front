@@ -10,7 +10,7 @@ const MainPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
   const { getNfts } = useApi();
   const { nfts } = useAppSelector((state) => state.nftsStore);
-  const isLoading = useAppSelector((state) => state.uiStore);
+  const isLoading = useAppSelector((state) => state.uiStore.loading);
 
   useEffect(() => {
     (async () => {
