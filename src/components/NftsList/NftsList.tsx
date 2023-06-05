@@ -9,9 +9,9 @@ interface NftsListProps {
 const NftsList = ({ nfts }: NftsListProps) => {
   return (
     <NftsListStyled>
-      {nfts.map((nfts) => (
+      {nfts.map((nfts, index) => (
         <li key={nfts._id}>
-          <NftCard nft={nfts} />
+          <NftCard nft={nfts} isLazy={index === 0 ? "eager" : "lazy"} />
         </li>
       ))}
     </NftsListStyled>
