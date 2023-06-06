@@ -21,7 +21,7 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper: wrapWithProvider,
       });
-      const expectedResponse = "Nft was deleted";
+      const expectedResponse = "Nft NOT deleted";
 
       const idOfNftToDelete = nftsMock[0]._id;
 

@@ -26,7 +26,7 @@ const useApi = () => {
 
   const deleteNft = async (id: string) => {
     try {
-      await axios.delete(`${apiUrl}nfts/delete/${id}`);
+      await axios.delete(`${apiUrl}nfts/${id}`);
       return "Nft was deleted";
     } catch (error) {
       return "Nft NOT deleted";

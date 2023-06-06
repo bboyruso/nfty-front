@@ -2,7 +2,7 @@ import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps {
   text?: string;
-  onClick?: () => void;
+  onClick?: (id: string) => void;
 }
 
 const Button = ({ text }: ButtonProps): React.ReactElement => {

@@ -17,7 +17,16 @@ describe("Given a NFT Card Component", () => {
       const expectedButtonText = "Delete";
       const expectedTitle = "First NFT";
 
-      renderWithProviders(wrapWithRouter(<NftCard nft={nftCardMock} />));
+      renderWithProviders(
+        wrapWithRouter(
+          <NftCard
+            onDeleteClick={() => {
+              333;
+            }}
+            nft={nftCardMock}
+          />
+        )
+      );
 
       const title = screen.getByRole("img", {
         name: expectedTitle,

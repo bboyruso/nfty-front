@@ -3,14 +3,7 @@ import "@fontsource/inter";
 
 const GlobalStyle = createGlobalStyle`
 
-  @font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/inter-latin-400-normal-0364d368.woff2') format('woff2');
-  font-display: swap;
-  }
-  
+
   *,
   ::before,
   ::after {
@@ -21,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 20px;
     font-family: 'Inter';
+      font-display: swap;
     min-height: 100vh;
   }
   
