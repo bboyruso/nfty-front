@@ -84,7 +84,9 @@ describe("Given a useApi function", () => {
       const nfts = await getNfts();
 
       expect(nfts).toStrictEqual(undefined);
-      expect(result.current.errorMessage).toStrictEqual("Error getting NFTs");
+      expect(result.current.feedbackMessage).toStrictEqual(
+        "Error getting NFTs"
+      );
     });
   });
 });
