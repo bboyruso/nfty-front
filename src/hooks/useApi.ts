@@ -29,9 +29,9 @@ const useApi = () => {
   const deleteNft = async (id: string) => {
     try {
       await axios.delete(`${apiUrl}nfts/${id}`);
-      return "Nft was deleted";
+      dispatch(setFeedback("NTF WAS DELETED"));
     } catch (error) {
-      return "Nft NOT deleted";
+      dispatch(setFeedback("NTF NOT DELETED"));
     }
   };
 
