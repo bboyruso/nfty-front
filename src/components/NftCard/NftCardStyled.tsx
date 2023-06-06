@@ -8,7 +8,6 @@ const NftCardStyled = styled.div`
       "title button"
       "author price";
     gap: 20px;
-    width: 100%;
     padding: 15px;
   }
 
@@ -22,6 +21,10 @@ const NftCardStyled = styled.div`
     font-size: 20px;
   }
 
+  img {
+    width: 100%;
+    height: auto;
+  }
   span:nth-child(2) {
     justify-self: end;
   }

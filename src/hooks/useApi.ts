@@ -2,8 +2,7 @@ import { useCallback } from "react";
 import { NftStructure } from "../types";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../store";
-import { startLoading } from "../store/loading/loadingSlice";
-import { stopLoading } from "../store/loading/loadingSlice";
+import { hideLoading, showLoading } from "../store/loading/loadingSlice";
 import { setError, clearError } from "../store/error/errorSlice";
 
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -15,17 +14,26 @@ const useApi = () => {
   const getNfts = useCallback(async (): Promise<NftStructure[] | undefined> => {
     try {
       dispatch(clearError());
-      dispatch(startLoading());
+      dispatch(showLoading());
       const { data: nfts } = await axios.get<NftStructure[]>(`${apiUrl}nfts`);
-      dispatch(stopLoading());
+      dispatch(hideLoading());
       return nfts;
     } catch (error) {
-      dispatch(stopLoading());
+      dispatch(hideLoading());
       dispatch(setError("Error getting NFTs"));
     }
   }, [dispatch]);
 
-  return { getNfts, errorMessage };
+  const deleteNft = async (id: string) => {
+    try {
+      await axios.delete(`${apiUrl}nfts/delete/${id}`);
+      return "Nft was deleted";
+    } catch (error) {
+      return "Nft NOT deleted";
+    }
+  };
+
+  return { getNfts, deleteNft, errorMessage };
 };
 
 export default useApi;

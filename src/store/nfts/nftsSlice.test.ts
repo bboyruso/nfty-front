@@ -1,8 +1,12 @@
 import { nftsMock } from "../../mocks/nftsMock";
 import { NftsState, NftStructure } from "../../types";
-import { loadNftsActionCreator, nftsReducer } from "./nftsSlice";
+import {
+  deleteNftsActionCreator,
+  loadNftsActionCreator,
+  nftsReducer,
+} from "./nftsSlice";
 
-describe("Given a loadNftsReducer", () => {
+describe("Given a NftsReducer", () => {
   describe("When it receives an empty list of Nfts and a load nfts action with two Nfts", () => {
     test("Then it should return a new state with thats Nfts", () => {
       const currentNfts: NftStructure[] = [];
@@ -17,6 +21,27 @@ describe("Given a loadNftsReducer", () => {
 
       const newState = nftsReducer(currentNftsState, loadNftsAction);
       expect(expectedNewNftsState).toStrictEqual(newState);
+    });
+  });
+
+  describe("When it receives a current state and a deleteNft action with first nft id to delete", () => {
+    test("Then it should return a new state without deleted Nft", () => {
+      const id = nftsMock[0]._id;
+
+      const currentNfts: NftStructure[] = nftsMock;
+
+      const currentNftsState: NftsState = { nfts: currentNfts };
+
+      const expectedNftsState = {
+        nfts: nftsMock.filter((contact) => contact._id !== id),
+      };
+
+      const newState = nftsReducer(
+        currentNftsState,
+        deleteNftsActionCreator(id)
+      );
+
+      expect(newState).toStrictEqual(expectedNftsState);
     });
   });
 });
