@@ -5,7 +5,7 @@ import Loading from "./Loading";
 describe("Given a Loading Ui Component", () => {
   describe("When it renders", () => {
     test("Then it should render correctly", () => {
-      const loadingAnimationLabel = "loading animation";
+      const loadingAnimationLabel = "loading...";
 
       renderWithProviders(wrapWithRouter(<Loading />));
       const loadingElement = screen.getByLabelText(loadingAnimationLabel);
