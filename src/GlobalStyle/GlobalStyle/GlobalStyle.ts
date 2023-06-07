@@ -3,19 +3,23 @@ import "@fontsource/inter";
 
 const GlobalStyle = createGlobalStyle`
 
-
   *,
   ::before,
   ::after {
     box-sizing: border-box;
   }
   
-  
   body {
-    margin: 20px;
-    font-family: 'Inter';
-      font-display: swap;
-    min-height: 100vh;
+
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: 'Inter';
+  font-display: swap;
+  vertical-align: baseline;
+
   }
   
   h1,
@@ -37,7 +41,8 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  input {
+  input,
+  textarea {
     font-family: inherit;
     border: none;
   }
@@ -65,9 +70,11 @@ const GlobalStyle = createGlobalStyle`
   
 
     @media only screen and (max-width: 380px) {
+
   body {
     margin: 10px;
   }
+
   }
 
 
