@@ -2,18 +2,18 @@ import { renderWithProviders, wrapWithRouter } from "../../utils/testUtils";
 import Form from "./Form";
 import { screen } from "@testing-library/react";
 
-describe("Given a Navbar Component", () => {
-  describe("When it renders and contains two paths `Create` and `Logout` ", () => {
-    test("Navbar should renders with this navigation links correctly", () => {
+describe("Given a Form Component", () => {
+  describe("When it renders and contains a heading text`Form heading`", () => {
+    test("Form should renders with this heading correctly", () => {
       const expectedHeading = "Form heading";
 
       renderWithProviders(wrapWithRouter(<Form headingText="Form heading" />));
 
-      const firstLink = screen.getByRole("heading", {
+      const expectedElement = screen.getByRole("heading", {
         name: expectedHeading,
       });
 
-      expect(firstLink).toBeInTheDocument();
+      expect(expectedElement).toBeInTheDocument();
     });
   });
 });

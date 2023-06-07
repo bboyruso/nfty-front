@@ -39,7 +39,8 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  input {
+  input,
+  textarea {
     font-family: inherit;
     border: none;
   }
