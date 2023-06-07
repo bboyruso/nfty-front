@@ -16,17 +16,13 @@ const GlobalStyle = createGlobalStyle`
 	font-size: 100%;
   font-family: 'Inter';
   font-display: swap;
-	font: inherit;
 	vertical-align: baseline;
 }
   
   
   body {
     min-height: 100vh;
-    display: flex;
-    flex-direction:column;
-    justify-content:space-around;
-    gap: 40px;
+  
   }
   
   h1,
