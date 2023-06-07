@@ -8,21 +8,16 @@ const GlobalStyle = createGlobalStyle`
   ::after {
     box-sizing: border-box;
   }
-
-  html, body{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-  font-family: 'Inter';
-  font-display: swap;
-	vertical-align: baseline;
-}
-  
   
   body {
-    min-height: 100vh;
-  
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: 'Inter';
+  font-display: swap;
+  vertical-align: baseline;
   }
   
   h1,
