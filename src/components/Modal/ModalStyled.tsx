@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ModalStyled = styled.dialog`
+const ModalStyled = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ const ModalStyled = styled.dialog`
 
   svg {
     fill: ${(props) => props.theme.colors.secondary};
-    border: 5px solid ${(props) => props.theme.colors.secondary};
+    border: 3px solid ${(props) => props.theme.colors.light};
     border-radius: 4px;
   }
 `;

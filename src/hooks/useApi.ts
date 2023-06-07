@@ -30,8 +30,10 @@ const useApi = () => {
     try {
       await axios.delete(`${apiUrl}nfts/${id}`);
       dispatch(setFeedback("NTF WAS DELETED"));
+      return 200;
     } catch (error) {
       dispatch(setFeedback("NTF NOT DELETED"));
+      return 500;
     }
   };
 

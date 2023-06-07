@@ -14,10 +14,9 @@ const NftsList = ({ nfts }: NftsListProps) => {
   const { deleteNft } = useApi();
 
   const handleDeleteClick = async (id: string) => {
-    const status = await deleteNft(id);
-    if (status === "Nft was deleted") {
-      dispatch(deleteNftsActionCreator(id));
-    }
+    await deleteNft(id);
+
+    dispatch(deleteNftsActionCreator(id));
   };
 
   return (
