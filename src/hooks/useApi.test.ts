@@ -13,40 +13,44 @@ beforeEach(() => {
 
 describe("Given a useApi function", () => {
   describe("When it is called the function deleteNfts with id", () => {
-    test("Then it should return message `Nft was deleted`", async () => {
+    test("Then it should return return  status code 200", async () => {
       const {
+        result,
         result: {
           current: { deleteNft },
         },
       } = renderHook(() => useApi(), {
         wrapper: wrapWithProvider,
       });
-      const expectedResponse = "Nft was deleted";
+      const expectedStatusCode = 200;
 
       const idOfNftToDelete = nftsMock[0]._id;
 
       const nftsResponse = await deleteNft(idOfNftToDelete);
 
-      expect(nftsResponse).toStrictEqual(expectedResponse);
+      expect(nftsResponse).toStrictEqual(expectedStatusCode);
+      expect(result.current.feedbackMessage).toStrictEqual("NTF WAS DELETED");
     });
   });
 
   describe("When it is called the function deleteNfts with id inexistent", () => {
-    test("Then it should return  message `Nft NOT deleted`", async () => {
+    test("Then it should return status code 500", async () => {
       server.resetHandlers(...errorHandler);
 
       const {
+        result,
         result: {
           current: { deleteNft },
         },
       } = renderHook(() => useApi(), {
         wrapper: wrapWithProvider,
       });
-      const expectedResponse = "Nft NOT deleted";
+      const expectedStatusCode = 500;
 
       const nftsResponse = await deleteNft("THIS-ID-NOT-EXIST");
 
-      expect(nftsResponse).toStrictEqual(expectedResponse);
+      expect(nftsResponse).toStrictEqual(expectedStatusCode);
+      expect(result.current.feedbackMessage).toStrictEqual("NTF NOT DELETED");
     });
   });
 
@@ -84,7 +88,9 @@ describe("Given a useApi function", () => {
       const nfts = await getNfts();
 
       expect(nfts).toStrictEqual(undefined);
-      expect(result.current.errorMessage).toStrictEqual("Error getting NFTs");
+      expect(result.current.feedbackMessage).toStrictEqual(
+        "Error getting NFTs"
+      );
     });
   });
 });

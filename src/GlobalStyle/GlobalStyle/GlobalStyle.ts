@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import "@fontsource/inter";
 
 const GlobalStyle = createGlobalStyle`
-  
+
   *,
   ::before,
   ::after {
@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -18,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Inter';
   font-display: swap;
   vertical-align: baseline;
+
   }
   
   h1,

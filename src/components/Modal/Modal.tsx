@@ -10,11 +10,7 @@ const Modal = ({ text, isError }: ModalProps): React.ReactElement => {
   return (
     <ModalStyled className={isError ? "error" : ""}>
       <span>{text}</span>
-      <ReactSVG
-        src={
-          isError ? "src/assets/icons/error.svg" : "src/assets/icons/done.svg"
-        }
-      />
+      <ReactSVG src={isError ? "public/error.svg" : "public/error.svg"} />
     </ModalStyled>
   );
 };

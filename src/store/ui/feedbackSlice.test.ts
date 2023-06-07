@@ -1,4 +1,6 @@
-import errorReducer, { setError, clearError } from "./errorSlice";
+import { feedbackReducer } from "./feedbackSlice";
+
+import { setFeedback, hideFeedback } from "./feedbackSlice";
 
 describe("Given a error reducer", () => {
   const initialState = {
@@ -8,8 +10,8 @@ describe("Given a error reducer", () => {
     test("should handle setError and return a new state", () => {
       const expectedErrorMessage = "Something went wrong";
 
-      const action = setError(expectedErrorMessage);
-      const newState = errorReducer(initialState, action);
+      const action = setFeedback(expectedErrorMessage);
+      const newState = feedbackReducer(initialState, action);
 
       expect(newState).toStrictEqual({ message: expectedErrorMessage });
     });
@@ -22,8 +24,8 @@ describe("Given a error reducer", () => {
         message: "Something went wrong",
       };
 
-      const action = clearError();
-      const newState = errorReducer(currentState, action);
+      const action = hideFeedback();
+      const newState = feedbackReducer(currentState, action);
 
       expect(newState).toStrictEqual({ message: expectedMessageValue });
     });
