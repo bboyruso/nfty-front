@@ -69,14 +69,6 @@ const GlobalStyle = createGlobalStyle`
   }
   
 
-    @media only screen and (max-width: 380px) {
-
-  body {
-    margin: 10px;
-  }
-
-  }
-
 
 `;
 
