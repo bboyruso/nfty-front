@@ -6,6 +6,13 @@ export interface NftStructure {
   description: string;
   price: number;
 }
+export interface NftCardStructure {
+  title: string;
+  image: string;
+  description: string;
+  price: number;
+  author: string;
+}
 
 export interface NftsState {
   nfts: NftStructure[];

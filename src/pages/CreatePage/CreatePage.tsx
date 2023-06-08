@@ -1,10 +1,6 @@
-import Form from "../../components/Form/Form";
-
 const CreatePage = (): React.ReactElement => {
   return (
-    <>
-      <Form headingText="Add your artwork"></Form>
-    </>
+    <>{/* <Form onFormSubmit={han} headingText="Add your artwork"></Form> */}</>
   );
 };
 
