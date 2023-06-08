@@ -43,14 +43,13 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         onChange={handleChange}
       />
 
-      <h1>{headingText}</h1>
       <label htmlFor="author">Author</label>
       <input
         type="text"
         id="author"
         name="author"
         placeholder="Add your artist name.."
-        value={formData.title}
+        value={formData.author}
         onChange={handleChange}
       />
 
