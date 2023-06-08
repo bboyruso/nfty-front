@@ -22,7 +22,7 @@ const useApi = () => {
       return nfts;
     } catch (error) {
       dispatch(hideLoading());
-      dispatch(setFeedback("Error getting NFTs"));
+      dispatch(setFeedback("ERROR GETTING NFTS"));
     }
   }, [dispatch]);
 
@@ -37,7 +37,18 @@ const useApi = () => {
     }
   };
 
-  return { getNfts, deleteNft, feedbackMessage };
+  const addNft = async (formData: Partial<NftStructure>) => {
+    try {
+      await axios.post(`${apiUrl}nfts`, formData);
+      dispatch(setFeedback("NTF ADDED CORRECTLY"));
+      return 200;
+    } catch {
+      dispatch(setFeedback("NTF COULDN'T ADD"));
+      return 500;
+    }
+  };
+
+  return { getNfts, deleteNft, addNft, feedbackMessage };
 };
 
 export default useApi;
