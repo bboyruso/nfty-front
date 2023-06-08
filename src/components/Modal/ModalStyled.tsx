@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const ModalStyled = styled.button`
+  position: fixed;
+  top: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  border: 2px solid ${(props) => props.theme.colors.primary};
+  border: 2px solid ${(props) => props.theme.colors.light};
   margin: 20px 0;
   font-size: 22px;
   text-align: center;
@@ -16,7 +18,7 @@ const ModalStyled = styled.button`
   margin: 0 auto;
   color: white;
   padding: 20px;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: #000000e2;
 
   &.error {
     border: 2px solid ${(props) => props.theme.colors.tertiary};

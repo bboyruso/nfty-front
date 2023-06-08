@@ -15,7 +15,6 @@ const useApi = () => {
 
   const getNfts = useCallback(async (): Promise<NftStructure[] | undefined> => {
     try {
-      dispatch(hideFeedback());
       dispatch(showLoading());
       const { data: nfts } = await axios.get<NftStructure[]>(`${apiUrl}nfts`);
       dispatch(hideLoading());
@@ -28,7 +27,6 @@ const useApi = () => {
 
   const deleteNft = async (id: string) => {
     try {
-      dispatch(hideFeedback());
       dispatch(showLoading());
       await axios.delete(`${apiUrl}nfts/${id}`);
       dispatch(hideLoading());
