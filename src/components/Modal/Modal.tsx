@@ -1,15 +1,18 @@
+import { useAppDispatch } from "../../store";
+import { hideFeedback } from "../../store/ui/feedbackSlice";
 import ModalStyled from "./ModalStyled";
 import { ReactSVG } from "react-svg";
 
 export interface ModalProps {
   text: string;
   isError?: boolean;
-  onClose: () => void;
 }
 
-const Modal = ({ text, isError, onClose }: ModalProps): React.ReactElement => {
+const Modal = ({ text, isError }: ModalProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+
   const handleClick = () => {
-    onClose();
+    dispatch(hideFeedback());
   };
 
   return (
