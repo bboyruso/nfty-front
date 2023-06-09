@@ -24,7 +24,10 @@ const NftCardStyled = styled.div`
   img {
     width: 100%;
     height: auto;
+    max-width: 500px;
+    min-width: 280px;
   }
+
   span:nth-child(2) {
     justify-self: end;
   }
