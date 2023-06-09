@@ -2,11 +2,11 @@ import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps {
   text?: string;
-  onClick?: (id: string) => void;
+  onClick: () => void;
 }
 
-const Button = ({ text }: ButtonProps): React.ReactElement => {
-  return <ButtonStyled>{text}</ButtonStyled>;
+const Button = ({ text, onClick }: ButtonProps): React.ReactElement => {
+  return <ButtonStyled onClick={onClick}>{text}</ButtonStyled>;
 };
 
 export default Button;

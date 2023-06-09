@@ -1,4 +1,5 @@
 import { NftStructure } from "../../types";
+import Button from "../Button/Button";
 import NftCardStyled from "./NftCardStyled";
 
 interface NftCardProps {
@@ -19,7 +20,10 @@ const NftCard = ({
         <span className="title">{title}</span>
         <span className="author"> by {author}</span>
         <span className="price"> {price} ETH</span>
-        <button onClick={() => onDeleteClick(id as string)}>Delete</button>
+        <Button
+          text="Delete"
+          onClick={() => onDeleteClick(id as string)}
+        ></Button>
       </div>
     </NftCardStyled>
   );
