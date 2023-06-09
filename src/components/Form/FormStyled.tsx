@@ -10,13 +10,14 @@ const FormStyled = styled.form`
   gap: 15px;
   width: 100%;
   padding: 20px;
+  text-align: center;
 
   input,
   textarea {
     border: 2px solid #00000085;
     border-radius: 7px;
-    align-self: center;
     width: 100%;
+    text-align: left;
   }
 
   label {
@@ -26,12 +27,16 @@ const FormStyled = styled.form`
   }
 
   input {
-    height: 30px;
+    height: 32px;
   }
 
   h1 {
     font-size: 28px;
     margin-bottom: 20px;
+  }
+
+  textarea::placeholder {
+    text-align: center;
   }
 
   @media screen and (min-width: 500px) {
@@ -49,6 +54,7 @@ const FormStyled = styled.form`
   textarea,
   textarea::placeholder {
     padding: 2px 10px;
+    text-align: left;
   }
 
   textarea {

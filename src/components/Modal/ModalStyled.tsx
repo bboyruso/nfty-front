@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ModalStyled = styled.dialog`
+const ModalStyled = styled.button`
   position: fixed;
   top: 40%;
   display: flex;

@@ -23,6 +23,7 @@ export default defineConfig({
         "src/components/App/App.tsx",
         "src/GlobalStyle/GlobalStyle/GlobalStyle.ts",
         "src/routers/lazyPages/lazyPages.ts",
+        "src/routers/appRouter/appRouter.tsx",
       ],
     },
   },

@@ -3,11 +3,13 @@ import { screen } from "@testing-library/react";
 import Modal from "./Modal";
 
 describe("Given a Modal feedback Component", () => {
-  describe("When it receives a text `Welcome`", () => {
+  describe("When it receives a text `Something went wrong`", () => {
     test("Then it should render with a text", () => {
-      const expectedText = "Welcome";
+      const expectedText = "Something went wrong OK";
 
-      renderWithProviders(wrapWithRouter(<Modal text="Welcome" />));
+      renderWithProviders(
+        wrapWithRouter(<Modal text="Something went wrong" />)
+      );
 
       const modal = screen.getByRole("button", {
         name: expectedText,
@@ -17,9 +19,9 @@ describe("Given a Modal feedback Component", () => {
     });
   });
 
-  describe("When it receives isError property and text `Something went wrong`", () => {
+  describe("When it receives Error and text `Something went wrong`", () => {
     test("Then it should render with a text", () => {
-      const expectedText = "Something went wrong";
+      const expectedText = "Something went wrong OK";
 
       renderWithProviders(
         wrapWithRouter(<Modal isError text="Something went wrong" />)

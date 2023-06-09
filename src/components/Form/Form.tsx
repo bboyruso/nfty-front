@@ -66,7 +66,6 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="price"
         name="price"
-        value={formData.price}
         placeholder="Add price in ETH.."
         onChange={handleChange}
       />
