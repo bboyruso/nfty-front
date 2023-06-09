@@ -31,6 +31,13 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
     onFormSubmit(formData);
   };
 
+  const isButtonDisabled =
+    formData.author.length < 1 ||
+    formData.description.length < 1 ||
+    formData.image.length < 1 ||
+    formData.title.length < 1 ||
+    formData.price < 1;
+
   return (
     <FormStyled>
       <h1>{headingText}</h1>
@@ -59,6 +66,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="price"
         name="price"
+        value={formData.price}
         placeholder="Add price in ETH.."
         onChange={handleChange}
       />
@@ -81,7 +89,11 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         value={formData.description}
         onChange={handleChange}
       />
-      <Button text="Create" onClickForm={handleSubmit} />
+      <Button
+        text="Create"
+        onClickForm={handleSubmit}
+        isDisabled={isButtonDisabled}
+      />
     </FormStyled>
   );
 };

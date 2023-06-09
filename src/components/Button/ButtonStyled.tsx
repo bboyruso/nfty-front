@@ -12,6 +12,11 @@ const ButtonStyled = styled.button`
   font-size: 22px;
   line-height: 27px;
   text-align: center;
+
+  &.disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
 `;
 
 export default ButtonStyled;
