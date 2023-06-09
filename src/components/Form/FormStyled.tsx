@@ -1,21 +1,28 @@
 import styled from "styled-components";
 
 const FormStyled = styled.form`
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  border: 1px solid #0000005e;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
 
   input,
   textarea {
     border: 2px solid #00000085;
     border-radius: 7px;
-    width: 90%;
+    align-self: center;
+    width: 100%;
   }
 
   label {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: left;
+    align-self: flex-start;
   }
 
   input {
@@ -28,12 +35,12 @@ const FormStyled = styled.form`
   }
 
   @media screen and (min-width: 500px) {
-    gap: 30px;
+    gap: 20px;
+
+    max-width: 350px;
 
     input,
     textarea {
-      width: 60%;
-      max-width: 400px;
       font-size: 18px;
     }
   }

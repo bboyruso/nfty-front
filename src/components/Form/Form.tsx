@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormStyled from "./FormStyled";
 import { NftCardStructure, NftStructure } from "../../types";
+import Button from "../Button/Button";
 
 interface FormProps {
   headingText: string;
@@ -59,7 +60,6 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         id="price"
         name="price"
         placeholder="Add price in ETH.."
-        value={formData.price}
         onChange={handleChange}
       />
 
@@ -81,10 +81,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         value={formData.description}
         onChange={handleChange}
       />
-
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
+      <Button text="Create" onClickForm={handleSubmit} />
     </FormStyled>
   );
 };

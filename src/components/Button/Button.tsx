@@ -1,12 +1,18 @@
+import React from "react";
 import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps {
   text?: string;
-  onClick: () => void;
+  onClick?: () => void;
+  onClickForm?: (event: React.FormEvent) => void;
 }
 
-const Button = ({ text, onClick }: ButtonProps): React.ReactElement => {
-  return <ButtonStyled onClick={onClick}>{text}</ButtonStyled>;
+const Button = ({
+  text,
+  onClick,
+  onClickForm,
+}: ButtonProps): React.ReactElement => {
+  return <ButtonStyled onClick={onClick || onClickForm}>{text}</ButtonStyled>;
 };
 
 export default Button;
