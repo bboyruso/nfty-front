@@ -17,8 +17,14 @@ const ModalStyled = styled.button`
   align-self: center;
   margin: 0 auto;
   color: white;
-  padding: 20px;
+  padding: 25px;
   background-color: #000000e2;
+
+  span:nth-child(2) {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+  }
 
   &.error {
     border: 2px solid ${(props) => props.theme.colors.tertiary};

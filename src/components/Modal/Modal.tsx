@@ -1,7 +1,6 @@
 import { useAppDispatch } from "../../store";
 import { hideFeedback } from "../../store/ui/feedbackSlice";
 import ModalStyled from "./ModalStyled";
-import { ReactSVG } from "react-svg";
 
 export interface ModalProps {
   text: string;
@@ -16,9 +15,13 @@ const Modal = ({ text, isError }: ModalProps): React.ReactElement => {
   };
 
   return (
-    <ModalStyled className={isError ? "error" : ""} onClick={handleClick}>
+    <ModalStyled
+      className={isError ? "error" : ""}
+      onClick={handleClick}
+      onKeyDown={handleClick}
+    >
       <span>{text}</span>
-      <ReactSVG src={isError ? "public/error.svg" : "public/error.svg"} />
+      <span>OK</span>
     </ModalStyled>
   );
 };

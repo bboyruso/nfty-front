@@ -14,7 +14,7 @@ describe("Given a Create page", () => {
         name: expectedText,
       });
 
-      const button = screen.getByRole("button", { name: "Submit" });
+      const button = screen.getByRole("button", { name: "Create" });
       fireEvent.click(button);
 
       await userEvent.click(button);
