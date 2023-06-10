@@ -2,17 +2,20 @@ import { DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
   colors: {
-    primary: "#2081E2",
+    primary: "#435FC4",
     secondary: "#2CCD28",
+    fifth: "#EEEBF8",
     tertiary: "#FF0000",
     light: "#FFFFFF",
     dark: "#000000",
   },
 
-  fonts: { primary: "Inter" },
+  fonts: { primary: "Roboto" },
 
   fontSizes: {
-    medium: "22px",
+    small: "18px",
+    large: "28px",
+    medium: "24px",
   },
 };
 

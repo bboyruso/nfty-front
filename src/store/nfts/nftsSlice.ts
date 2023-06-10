@@ -20,12 +20,18 @@ const nftsSlice = createSlice({
         (nft) => nft._id !== action.payload
       );
     },
+
+    addNft: (currentState, action: PayloadAction<NftStructure>): NftsState => ({
+      ...currentState,
+      nfts: [...currentState.nfts, action.payload],
+    }),
   },
 });
 
 export const {
   loadNfts: loadNftsActionCreator,
   deleteNft: deleteNftsActionCreator,
+  addNft: addNftsActionCreator,
 } = nftsSlice.actions;
 
 export const nftsReducer = nftsSlice.reducer;

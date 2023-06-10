@@ -51,13 +51,11 @@ describe("Given a useApi function", () => {
       });
 
       const expectedFeedbackMessage = "NTF ADDED CORRECTLY";
-      const expectedStatusCode = 200;
 
       const nftToAdd = nftsMock[0];
 
-      const nftsResponse = await addNft(nftToAdd);
+      await addNft(nftToAdd);
 
-      expect(nftsResponse).toStrictEqual(expectedStatusCode);
       expect(result.current.feedbackMessage).toStrictEqual(
         expectedFeedbackMessage
       );

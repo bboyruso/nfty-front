@@ -10,12 +10,14 @@ const Layout = () => {
   const { message } = useAppSelector((state) => state.feedbackStore);
 
   return (
-    <ContainerStyled>
-      {loading && <Loading />}
-      {message && <Modal text={message} />}
+    <>
       <Header />
-      <Outlet />
-    </ContainerStyled>
+      <ContainerStyled>
+        {loading && <Loading />}
+        {message && <Modal text={message} />}
+        <Outlet />
+      </ContainerStyled>
+    </>
   );
 };
 

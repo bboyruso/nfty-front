@@ -15,11 +15,14 @@ const NftCard = ({
 }: NftCardProps): React.ReactElement => {
   return (
     <NftCardStyled>
-      <img src={image} alt={title} width={300} height={300} loading={isLazy} />
+      <img src={image} alt={title} width={400} height={400} loading={isLazy} />
       <div className="card-info">
         <span className="title">{title}</span>
         <span className="author"> by {author}</span>
-        <span className="price"> {price} ETH</span>
+        <span className="price">
+          {price}
+          <h2>ETH</h2>
+        </span>
         <Button
           text="Delete"
           onClick={() => onDeleteClick(id as string)}

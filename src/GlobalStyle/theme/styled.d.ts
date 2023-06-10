@@ -5,6 +5,7 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       tertiary: string;
+      fifth: string;
       light: string;
       dark: string;
     };
@@ -15,6 +16,8 @@ declare module "styled-components" {
 
     fontSizes: {
       medium: string;
+      small: string;
+      large: string;
     };
   }
 }
