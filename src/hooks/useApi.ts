@@ -49,7 +49,7 @@ const useApi = () => {
       return nfts;
     } catch {
       dispatch(hideLoading());
-      dispatch(setFeedback("NTF COULDN'T ADD."));
+      dispatch(setFeedback("NTF COULDN'T ADD"));
       return 500;
     }
   };
