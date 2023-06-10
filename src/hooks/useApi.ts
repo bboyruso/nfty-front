@@ -43,13 +43,13 @@ const useApi = () => {
     try {
       dispatch(hideFeedback());
       dispatch(showLoading());
-      await axios.post(`${apiUrl}nfts`, formData);
+      const { data: nfts } = await axios.post(`${apiUrl}nfts`, formData);
       dispatch(hideLoading());
       dispatch(setFeedback("NTF ADDED CORRECTLY"));
-      return 200;
+      return nfts;
     } catch {
       dispatch(hideLoading());
-      dispatch(setFeedback("NTF COULDN'T ADD"));
+      dispatch(setFeedback("NTF COULDN'T ADD."));
       return 500;
     }
   };

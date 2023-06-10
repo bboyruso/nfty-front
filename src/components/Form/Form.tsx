@@ -31,12 +31,19 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
     onFormSubmit(formData);
   };
 
+  const urlPattern = new RegExp(
+    /^(https?:\/\/)?((([a-zA-Z\d]([a-zA-Z\d-]{0,61}[a-zA-Z\d])?)\.)+[a-zA-Z]{2,}|((\d{1,3}\.){3}\d{1,3}))(?::\d{2,5})?(\/[-a-zA-Z\d%_.~+]*)*(\?[;&a-zA-Z\d%_.~+=-]*)?(#[-a-zA-Z\d_]*)?$/,
+    "i"
+  );
+
   const isButtonDisabled =
     formData.author.length < 1 ||
-    formData.description.length < 1 ||
+    formData.description.length < 20 ||
     formData.image.length < 1 ||
     formData.title.length < 1 ||
-    formData.price < 1;
+    formData.price < 0.0001 ||
+    /[a-zA-Z]/.test(formData.price.toString()) ||
+    !urlPattern.test(formData.image);
 
   return (
     <FormStyled>
@@ -46,7 +53,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="title"
         name="title"
-        placeholder="Add title.."
+        placeholder="Add title..."
         value={formData.title}
         onChange={handleChange}
       />
@@ -56,7 +63,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="author"
         name="author"
-        placeholder="Add your artist name.."
+        placeholder="Add your artist name..."
         value={formData.author}
         onChange={handleChange}
       />
@@ -66,7 +73,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="price"
         name="price"
-        placeholder="Add price in ETH.."
+        placeholder="Add price in ETH..."
         onChange={handleChange}
       />
 
@@ -75,7 +82,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         type="text"
         id="image"
         name="image"
-        placeholder="Add image link.."
+        placeholder="Add image link..."
         value={formData.image}
         onChange={handleChange}
       />
@@ -84,7 +91,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
       <textarea
         id="description"
         name="description"
-        placeholder="Add description.."
+        placeholder="Add description (minimum of 20 characters)..."
         value={formData.description}
         onChange={handleChange}
       />
