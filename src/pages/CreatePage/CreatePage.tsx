@@ -1,12 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import useApi from "../../hooks/useApi";
 import { NftStructure } from "../../types";
 
 const CreatePage = (): React.ReactElement => {
   const { addNft } = useApi();
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (nftData: Partial<NftStructure>) => {
-    await addNft(nftData);
+    const nft = await addNft(nftData);
+
+    if (nft === 200) {
+      navigate("/");
+    }
   };
 
   return (
