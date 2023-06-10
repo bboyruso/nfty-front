@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const FormStyled = styled.form`
+  font-family: "Roboto";
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #0000005e;
   gap: 15px;
   width: 100%;
   padding: 20px;
@@ -31,8 +31,10 @@ const FormStyled = styled.form`
   }
 
   h1 {
-    font-size: 28px;
+    font-size: ${(props) => props.theme.fontSizes.large};
     margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 
   textarea::placeholder {

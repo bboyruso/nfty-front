@@ -47,7 +47,7 @@ describe("Given a NftsReducer", () => {
   });
 
   describe("When current state is 3 Nfts and receives an addNft action with 1 nft  to add", () => {
-    test.only("Then it should return a new state with 4 Nfts", () => {
+    test("Then it should return a new state with 4 Nfts", () => {
       const currentNftsState: NftsState = { nfts: nftsMock };
 
       const newState = nftsReducer(

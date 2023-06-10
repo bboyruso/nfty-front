@@ -13,7 +13,7 @@ beforeEach(() => {
 
 describe("Given a useApi function", () => {
   describe("When it is called the function addNfts with nft to add", () => {
-    test.only("Then it should return 500 with feedback message ´NTF COULDN'T ADD´ ", async () => {
+    test("Then it should return 500 with feedback message ´NTF COULDN'T ADD´ ", async () => {
       server.resetHandlers(...errorHandler);
 
       const {

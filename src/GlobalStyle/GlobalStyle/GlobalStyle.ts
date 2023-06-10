@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import "@fontsource/inter";
+import "@fontsource/roboto";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: 'Inter';
+  font-family: 'Roboto';
   font-display: swap;
   vertical-align: baseline;
 

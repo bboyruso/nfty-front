@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
+  box-shadow: 3px 4px 10px #435fc45e;
+  margin-bottom: 30px;
+
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -10,32 +13,10 @@ const HeaderStyled = styled.header`
 
   .brand-name {
     letter-spacing: 2px;
-    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
-    line-height: 54px;
-    color: #000000;
-  }
-
-  @media only screen and (max-width: 430px) {
-    .brand-name {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 28px;
-      line-height: 54px;
-      color: #000000;
-    }
-  }
-
-  @media only screen and (max-width: 360px) {
-    padding: 0;
-
-    .brand-name {
-      letter-spacing: 1px;
-      font-size: 20px;
-    }
+    font-size: ${(props) => props.theme.fontSizes.large};
+    color: ${(props) => props.theme.colors.dark};
   }
 `;
 
