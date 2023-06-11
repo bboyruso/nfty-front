@@ -17,3 +17,7 @@ export interface NftCardStructure {
 export interface NftsState {
   nfts: NftStructure[];
 }
+export interface NfsLastState {
+  items: NftStructure[];
+  length: number;
+}

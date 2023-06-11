@@ -124,7 +124,7 @@ describe("Given a useApi function", () => {
         wrapper: wrapWithProvider,
       });
 
-      const nfts = await getNfts();
+      const nfts = await getNfts(0, 5);
 
       expect(nfts).toStrictEqual(expectedNfts);
     });
@@ -145,7 +145,7 @@ describe("Given a useApi function", () => {
 
       const expectedFeedbackMessage = "ERROR GETTING NFTS";
 
-      const nfts = await getNfts();
+      const nfts = await getNfts(0, 5);
 
       expect(nfts).toStrictEqual(undefined);
       expect(result.current.feedbackMessage).toStrictEqual(

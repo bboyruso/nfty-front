@@ -13,17 +13,26 @@ const useApi = () => {
     (state) => state.feedbackStore.message
   );
 
-  const getNfts = useCallback(async (): Promise<NftStructure[] | undefined> => {
-    try {
-      dispatch(showLoading());
-      const { data: nfts } = await axios.get<NftStructure[]>(`${apiUrl}nfts`);
-      dispatch(hideLoading());
-      return nfts;
-    } catch {
-      dispatch(hideLoading());
-      dispatch(setFeedback("ERROR GETTING NFTS"));
-    }
-  }, [dispatch]);
+  const getNfts = useCallback(
+    async (
+      skip: number,
+      limit: number
+    ): Promise<NftStructure[] | undefined> => {
+      try {
+        dispatch(showLoading());
+        const {
+          data: { nfts },
+        } = await axios.get(`${apiUrl}nfts?skip=${skip}&limit=${limit}`);
+
+        dispatch(hideLoading());
+        return nfts;
+      } catch {
+        dispatch(hideLoading());
+        dispatch(setFeedback("ERROR GETTING NFTS"));
+      }
+    },
+    [dispatch]
+  );
 
   const deleteNft = async (id: string) => {
     try {
