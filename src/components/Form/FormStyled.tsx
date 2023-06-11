@@ -7,27 +7,30 @@ const FormStyled = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
   padding: 20px;
-  text-align: center;
 
   input,
   textarea {
-    border: 2px solid #00000085;
-    border-radius: 7px;
+    border: 2px solid #00000026;
     width: 100%;
-    text-align: left;
+    background-color: ${(props) => props.theme.colors.fifth};
+  }
+
+  textarea,
+  input:focus {
+    background-color: ${(props) => props.theme.colors.light};
   }
 
   label {
     font-size: 20px;
-    text-align: left;
     align-self: flex-start;
   }
 
   input {
-    height: 32px;
+    height: 40px;
+    margin-bottom: 15px;
   }
 
   h1 {
@@ -37,14 +40,13 @@ const FormStyled = styled.form`
     font-weight: 400;
   }
 
-  textarea::placeholder {
-    text-align: center;
+  textarea {
   }
 
   @media screen and (min-width: 500px) {
     gap: 20px;
 
-    max-width: 350px;
+    max-width: 400px;
 
     input,
     textarea {
@@ -56,11 +58,18 @@ const FormStyled = styled.form`
   textarea,
   textarea::placeholder {
     padding: 2px 10px;
+    font-size: ${(props) => props.theme.fontSizes.small};
     text-align: left;
   }
 
+  textarea::placeholder {
+    padding: 10px 0px;
+  }
+
   textarea {
-    min-height: 60px;
+    min-height: 80px;
+    margin-bottom: 15px;
+    padding: 10px 10px;
   }
 `;
 

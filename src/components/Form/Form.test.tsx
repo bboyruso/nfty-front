@@ -33,7 +33,8 @@ describe("Given a Form Component", () => {
   describe("When is rendered and the user fills the form and submits", () => {
     test("Then it should call the received submit handler function", async () => {
       const buttonText = "Create";
-      const inputText = "New Nft";
+      const description = "New Nft and come description";
+      const title = "Best NFT";
 
       renderWithProviders(
         <Form headingText="Create" onFormSubmit={handleSubmit} />
@@ -43,14 +44,21 @@ describe("Given a Form Component", () => {
         name: buttonText,
       });
 
-      const input = screen.getByRole("textbox", {
+      const inputTitle = screen.getByRole("textbox", {
         name: "Title",
       });
 
-      await userEvent.type(input, inputText);
+      const inputDescription = screen.getByRole("textbox", {
+        name: "Description",
+      });
+
+      await userEvent.type(inputTitle, title);
+      await userEvent.type(inputDescription, description);
+
       await userEvent.click(button);
 
-      expect(input).toHaveValue(inputText);
+      expect(inputTitle).toHaveValue(title);
+      expect(inputDescription).toHaveValue(description);
     });
   });
 });
