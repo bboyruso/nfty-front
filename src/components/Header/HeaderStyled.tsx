@@ -3,9 +3,9 @@ import styled from "styled-components";
 const HeaderStyled = styled.header`
   border-bottom: 1px solid ${(props) => props.theme.colors.primary};
   box-shadow: 3px 4px 10px #435fc45e;
-  margin-bottom: 30px;
 
   height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

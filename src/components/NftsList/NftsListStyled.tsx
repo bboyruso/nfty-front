@@ -5,11 +5,9 @@ const NftsListStyled = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 45px;
+  gap: 30px;
 
   @media only screen and (min-width: 900px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     .nav-link {
       font-size: ${(props) => props.theme.fontSizes.medium};
       display: flex;

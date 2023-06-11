@@ -3,7 +3,8 @@ import styled from "styled-components";
 const NftCardStyled = styled.div`
   background-color: ${(props) => props.theme.colors.fifth};
   box-shadow: 3px 4px 10px #435fc45e;
-  max-width: 300px;
+  max-width: 400px;
+
   .card-info {
     display: flex;
     flex-direction: column;
