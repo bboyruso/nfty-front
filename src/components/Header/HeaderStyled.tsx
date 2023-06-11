@@ -5,6 +5,7 @@ const HeaderStyled = styled.header`
   box-shadow: 3px 4px 10px #435fc45e;
 
   height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

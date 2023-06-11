@@ -1,19 +1,31 @@
 import styled from "styled-components";
 
 const LoadingStyled = styled.div`
+  z-index: 10;
+  height: 100%;
+  align-self: center;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffcf;
+
   .lds-ripple {
     position: fixed;
-    top: 50%;
-    left: 40%;
     width: 80px;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .lds-ripple div {
     position: absolute;
-    border: 4px solid #2081e2;
+    border: 4px solid ${(props) => props.theme.colors.primary};
     opacity: 1;
     border-radius: 50%;
-    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: lds-ripple 1s cubic-bezier(0, 0.1, 0.8, 1) infinite;
   }
   .lds-ripple div:nth-child(2) {
     animation-delay: -0.5s;

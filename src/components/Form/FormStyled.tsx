@@ -11,16 +11,11 @@ const FormStyled = styled.form`
   width: 100%;
   padding: 20px;
 
-  input,
-  textarea {
-    border: 2px solid #00000026;
-    width: 100%;
-    background-color: ${(props) => props.theme.colors.fifth};
-  }
-
-  textarea,
-  input:focus {
-    background-color: ${(props) => props.theme.colors.light};
+  h1 {
+    font-size: ${(props) => props.theme.fontSizes.large};
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 
   label {
@@ -33,14 +28,33 @@ const FormStyled = styled.form`
     margin-bottom: 15px;
   }
 
-  h1 {
-    font-size: ${(props) => props.theme.fontSizes.large};
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: 400;
+  textarea {
+    min-height: 80px;
+    margin-bottom: 15px;
   }
 
+  input,
   textarea {
+    padding: 10px 10px;
+    border: 2px solid #00000026;
+    width: 100%;
+    background-color: ${(props) => props.theme.colors.fifth};
+  }
+
+  textarea,
+  input:focus {
+    background-color: ${(props) => props.theme.colors.light};
+  }
+
+  input,
+  textarea,
+  textarea::placeholder {
+    padding: 2px 10px;
+    text-align: left;
+  }
+
+  textarea::placeholder {
+    padding: 10px 0px;
   }
 
   @media screen and (min-width: 500px) {
@@ -54,22 +68,8 @@ const FormStyled = styled.form`
     }
   }
 
-  input,
-  textarea,
-  textarea::placeholder {
-    padding: 2px 10px;
-    font-size: ${(props) => props.theme.fontSizes.small};
-    text-align: left;
-  }
-
-  textarea::placeholder {
-    padding: 10px 0px;
-  }
-
   textarea {
-    min-height: 80px;
-    margin-bottom: 15px;
-    padding: 10px 10px;
+    background-color: ${(props) => props.theme.colors.fifth};
   }
 `;
 
