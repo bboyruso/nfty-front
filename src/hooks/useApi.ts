@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { NftStructure } from "../types";
+import { NftStructure, NftsState } from "../types";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../store";
 import { hideLoading, showLoading } from "../store/ui/loadingSlice";
@@ -14,18 +14,17 @@ const useApi = () => {
   );
 
   const getNfts = useCallback(
-    async (
-      skip: number,
-      limit: number
-    ): Promise<NftStructure[] | undefined> => {
+    async (skip: number, limit: number): Promise<NftsState | undefined> => {
       try {
         dispatch(showLoading());
         const {
-          data: { nfts },
-        } = await axios.get(`${apiUrl}nfts?skip=${skip}&limit=${limit}`);
+          data: { nfts, length },
+        } = await axios.get<NftsState>(
+          `${apiUrl}nfts?skip=${skip}&limit=${limit}`
+        );
 
         dispatch(hideLoading());
-        return nfts;
+        return { nfts, length };
       } catch {
         dispatch(hideLoading());
         dispatch(setFeedback("ERROR GETTING NFTS"));

@@ -12,12 +12,19 @@ const MainPage = (): React.ReactElement => {
   const { nfts } = useAppSelector((state) => state.nftsStore);
   const [skip, setSkip] = useState(0);
   const [limit] = useState(10);
+  const [totalNfts, setTotalNfts] = useState(0);
 
   useEffect(() => {
     (async () => {
-      const nfts = await getNfts(skip, limit);
+      const response = await getNfts(skip, limit);
 
-      if (nfts) {
+      if (response) {
+        const { nfts, length } = response;
+
+        if (length) {
+          setTotalNfts(length);
+        }
+
         dispatch(loadNftsActionCreator(nfts));
       }
     })();
@@ -29,16 +36,20 @@ const MainPage = (): React.ReactElement => {
   };
 
   const previousPage = () => {
-    if (skip !== 0) {
-      setSkip(skip - limit);
-      window.scroll(0, 0);
-    } else return;
+    setSkip(skip - limit);
+    window.scroll(0, 0);
   };
 
   return (
     <MainPageStyled aria-label="main page">
-      <Pagination nextPage={nextPage} previousPage={previousPage} />
       <NftsList nfts={nfts} />
+      <Pagination
+        nextPage={nextPage}
+        previousPage={previousPage}
+        skip={skip}
+        limit={limit}
+        nftLength={totalNfts}
+      />
     </MainPageStyled>
   );
 };

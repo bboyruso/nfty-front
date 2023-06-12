@@ -1,6 +1,5 @@
 import { renderHook } from "@testing-library/react";
 import { nftsMock } from "../mocks/nftsMock";
-import { NftStructure } from "../types";
 import useApi from "./useApi";
 import { wrapWithProvider } from "../utils/testUtils";
 import { server } from "../mocks/server";
@@ -114,7 +113,7 @@ describe("Given a useApi function", () => {
 
   describe("When it is called the function getNfts", () => {
     test("Then it should return a list of nfts", async () => {
-      const expectedNfts: NftStructure[] = nftsMock;
+      const expectedNfts = { length: 3, nfts: nftsMock };
 
       const {
         result: {
@@ -124,7 +123,7 @@ describe("Given a useApi function", () => {
         wrapper: wrapWithProvider,
       });
 
-      const nfts = await getNfts(0, 5);
+      const nfts = await getNfts(0, 10);
 
       expect(nfts).toStrictEqual(expectedNfts);
     });

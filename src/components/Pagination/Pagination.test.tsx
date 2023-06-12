@@ -12,7 +12,13 @@ describe("Given a Pagination Component", () => {
 
       renderWithProviders(
         wrapWithRouter(
-          <Pagination nextPage={goNextPage} previousPage={goPreviousPage} />
+          <Pagination
+            nextPage={goNextPage}
+            previousPage={goPreviousPage}
+            limit={0}
+            nftLength={40}
+            skip={10}
+          />
         )
       );
 
