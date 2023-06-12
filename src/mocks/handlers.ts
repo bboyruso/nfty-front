@@ -5,7 +5,10 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 export const handlers = [
   rest.get(`${apiUrl}nfts`, (_req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(nftsMock));
+    return res(
+      ctx.status(200),
+      ctx.json({ nfts: nftsMock, length: nftsMock.length })
+    );
   }),
 
   rest.delete(`${apiUrl}nfts/:id`, (_req, res, ctx) => {
