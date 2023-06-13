@@ -3,6 +3,7 @@ import App from "../../components/App/App";
 import {
   LazyCreatePage,
   LazyMainPage,
+  LazyNftDetailsPage,
   LazyNotFoundPage,
 } from "../lazyPages/lazyPages";
 import { Suspense } from "react";
@@ -25,6 +26,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense>
             <LazyMainPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/:id",
+        element: (
+          <Suspense>
+            <LazyNftDetailsPage />
           </Suspense>
         ),
       },
