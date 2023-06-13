@@ -4,6 +4,7 @@ import {
   addNftsActionCreator,
   deleteNftsActionCreator,
   loadNftsActionCreator,
+  loadSelectedNftActionCreator,
   nftsReducer,
 } from "./nftsSlice";
 
@@ -56,6 +57,25 @@ describe("Given a NftsReducer", () => {
       );
 
       expect(newState.nfts.length).toBe(currentNftsState.nfts.length + 1);
+    });
+  });
+
+  describe("When current state is 3 Nfts and receives an loadSelectedNft action with an id", () => {
+    test("Then it should return a new state with selected Nft", () => {
+      const currentNfts: NftStructure[] = nftsMock;
+
+      const currentNftsState: NftsState = { nfts: currentNfts };
+
+      const selectedNft: NftStructure = nftsMock[0];
+
+      const loadNftsAction = loadSelectedNftActionCreator(selectedNft);
+
+      const expectedNewNftsState: NftsState = {
+        nfts: [{ ...selectedNft }],
+      };
+
+      const newState = nftsReducer(currentNftsState, loadNftsAction);
+      expect(expectedNewNftsState).toStrictEqual(newState);
     });
   });
 });
