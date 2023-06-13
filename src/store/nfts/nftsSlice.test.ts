@@ -61,7 +61,7 @@ describe("Given a NftsReducer", () => {
   });
 
   describe("When current state is 3 Nfts and receives an loadSelectedNft action with an id", () => {
-    test.only("Then it should return a new state with selected Nft", () => {
+    test("Then it should return a new state with selected Nft", () => {
       const currentNfts: NftStructure[] = nftsMock;
 
       const currentNftsState: NftsState = { nfts: currentNfts };

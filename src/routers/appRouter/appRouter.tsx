@@ -30,7 +30,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: "/:id",
+        path: "nft/:id",
         element: (
           <Suspense>
             <LazyNftDetailsPage />
