@@ -26,7 +26,10 @@ const nftsSlice = createSlice({
       nfts: [...currentState.nfts, action.payload],
     }),
 
-    loadSelectedNft: (currentState, action: PayloadAction<NftStructure>) => ({
+    loadSelectedNft: (
+      currentState: NftsState,
+      action: PayloadAction<NftStructure>
+    ) => ({
       ...currentState,
       nfts: [{ ...action.payload }],
     }),

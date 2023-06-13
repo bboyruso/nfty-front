@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const DetailsStyled = styled.div`
+const DetailsPageStyled = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export default DetailsStyled;
+export default DetailsPageStyled;
