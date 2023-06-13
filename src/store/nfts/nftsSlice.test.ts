@@ -68,14 +68,15 @@ describe("Given a NftsReducer", () => {
 
       const selectedNft: NftStructure = nftsMock[0];
 
-      const loadNftsAction = loadSelectedNftActionCreator(selectedNft);
+      const nftById = loadSelectedNftActionCreator(selectedNft);
 
-      const expectedNewNftsState: NftsState = {
-        nfts: [{ ...selectedNft }],
+      const expectedState: NftsState = {
+        currentNft: selectedNft,
+        nfts: nftsMock,
       };
 
-      const newState = nftsReducer(currentNftsState, loadNftsAction);
-      expect(expectedNewNftsState).toStrictEqual(newState);
+      const newState = nftsReducer(currentNftsState, nftById);
+      expect(expectedState).toStrictEqual(newState);
     });
   });
 });

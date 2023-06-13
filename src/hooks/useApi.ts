@@ -62,17 +62,20 @@ const useApi = () => {
     }
   };
 
-  const getNftById = async (id: string) => {
-    try {
-      dispatch(showLoading());
-      const { data: nft } = await axios.get(`${apiUrl}nfts/${id}`);
-      dispatch(hideLoading());
-      return nft;
-    } catch {
-      dispatch(hideLoading());
-      dispatch(setFeedback("OPS.SOMETHING WENT WRONG."));
-    }
-  };
+  const getNftById = useCallback(
+    async (id: string) => {
+      try {
+        dispatch(showLoading());
+        const { data: nft } = await axios.get(`${apiUrl}nfts/${id}`);
+        dispatch(hideLoading());
+        return nft;
+      } catch {
+        dispatch(hideLoading());
+        dispatch(setFeedback("OPS.SOMETHING WENT WRONG."));
+      }
+    },
+    [dispatch]
+  );
 
   return {
     getNfts,
