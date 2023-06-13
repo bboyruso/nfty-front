@@ -11,5 +11,5 @@ export const LazyNotFoundPage = lazy(
 );
 
 export const LazyNftDetailsPage = lazy(
-  () => import("../../pages/DetailsPage/DetailsPageStyled")
+  () => import("../../pages/DetailsPage/DetailsPage")
 );

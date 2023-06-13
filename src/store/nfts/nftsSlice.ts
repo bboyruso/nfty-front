@@ -1,7 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { NftsState, NftStructure } from "../../types";
 
-const initialState: NftsState = { nfts: [] };
+const initialState: NftsState = {
+  nfts: [],
+  currentNft: {
+    _id: "",
+    title: "",
+    image: "",
+    author: "",
+    description: "",
+    price: 0,
+  },
+};
 
 const nftsSlice = createSlice({
   name: "nfts",
@@ -31,7 +41,7 @@ const nftsSlice = createSlice({
       action: PayloadAction<NftStructure>
     ) => ({
       ...currentState,
-      nfts: [{ ...action.payload }],
+      currentNft: { ...action.payload },
     }),
   },
 });
