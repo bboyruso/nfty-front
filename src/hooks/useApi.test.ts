@@ -152,4 +152,42 @@ describe("Given a useApi function", () => {
       );
     });
   });
+
+  describe("When it is called the function getNftById with existent id", () => {
+    test("Then it should return an Nft", async () => {
+      const {
+        result: {
+          current: { getNftById },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: wrapWithProvider,
+      });
+
+      const nftId = nftsMock[1]._id;
+
+      const nft = await getNftById(nftId);
+
+      expect(nft).toStrictEqual(nftsMock[0]);
+    });
+  });
+
+  describe("When it is called the function getNftById with inexistent id", () => {
+    test("Then it should not return an Nft", async () => {
+      server.resetHandlers(...errorHandler);
+
+      const {
+        result: {
+          current: { getNftById },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: wrapWithProvider,
+      });
+
+      const nftId = nftsMock[1]._id;
+
+      const nft = await getNftById(nftId);
+
+      expect(nft).toStrictEqual(undefined);
+    });
+  });
 });

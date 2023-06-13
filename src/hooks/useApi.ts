@@ -62,7 +62,25 @@ const useApi = () => {
     }
   };
 
-  return { getNfts, deleteNft, addNft, feedbackMessage };
+  const getNftById = async (id: string) => {
+    try {
+      dispatch(showLoading());
+      const { data: nft } = await axios.get(`${apiUrl}nfts/${id}`);
+      dispatch(hideLoading());
+      return nft;
+    } catch {
+      dispatch(hideLoading());
+      dispatch(setFeedback("OPS.SOMETHING WENT WRONG."));
+    }
+  };
+
+  return {
+    getNfts,
+    deleteNft,
+    addNft,
+    getNftById,
+    feedbackMessage,
+  };
 };
 
 export default useApi;
