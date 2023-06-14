@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const LoadingStyled = styled.div`
   z-index: 10;
-  height: 100%;
+  height: 100vh;
   align-self: center;
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0;
   display: flex;
   align-items: center;
