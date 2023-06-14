@@ -14,6 +14,7 @@ const DetailsPageStyled = styled.div`
     padding: 20px 0;
     font-size: ${(props) => props.theme.fontSizes.small};
     line-height: 1.7rem;
+    overflow-wrap: break-word;
   }
 
   .card-info {

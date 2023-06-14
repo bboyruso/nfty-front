@@ -77,11 +77,26 @@ const useApi = () => {
     [dispatch]
   );
 
+  const updateNft = async (formData: NftStructure) => {
+    try {
+      dispatch(hideFeedback());
+      dispatch(showLoading());
+      const { data: nft } = await axios.put(`${apiUrl}nfts`, formData);
+      dispatch(hideLoading());
+      dispatch(setFeedback("NTF UPLOADED CORRECTLY"));
+      return nft;
+    } catch {
+      dispatch(hideLoading());
+      dispatch(setFeedback("NTF COULDN'T UPLOAD"));
+    }
+  };
+
   return {
     getNfts,
     deleteNft,
     addNft,
     getNftById,
+    updateNft,
     feedbackMessage,
   };
 };

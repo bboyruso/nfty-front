@@ -6,15 +6,20 @@ import Button from "../Button/Button";
 interface FormProps {
   headingText: string;
   onFormSubmit: (formData: Partial<NftStructure>) => void;
+  nft?: NftStructure;
 }
 
-const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
+const Form = ({
+  headingText,
+  onFormSubmit,
+  nft,
+}: FormProps): React.ReactElement => {
   const [formData, setFormData] = useState<NftCardStructure>({
-    title: "",
-    price: 0,
-    image: "",
-    description: "",
-    author: "",
+    title: nft ? nft.title : "",
+    price: nft ? nft.price : 0,
+    image: nft ? nft.image : "",
+    description: nft ? nft.description : "",
+    author: nft ? nft.author : "",
   });
 
   const handleChange = (
@@ -96,7 +101,7 @@ const Form = ({ headingText, onFormSubmit }: FormProps): React.ReactElement => {
         onChange={handleChange}
       />
       <Button
-        text="Create"
+        text={nft ? "Update" : "Create"}
         onClickForm={handleSubmit}
         isDisabled={isButtonDisabled}
       />

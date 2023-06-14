@@ -190,4 +190,48 @@ describe("Given a useApi function", () => {
       expect(nft).toStrictEqual(undefined);
     });
   });
+
+  describe("When it is called the function updateNft with an object to update", () => {
+    test("Then it should return an Nft updated", async () => {
+      const {
+        result: {
+          current: { updateNft },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: wrapWithProvider,
+      });
+
+      const nftToUpdate = nftsMock[1];
+
+      const nft = await updateNft(nftToUpdate);
+
+      expect(nft).toStrictEqual(nftToUpdate);
+    });
+  });
+
+  describe("When it is called the function getNftById with inexistent id", () => {
+    test("Then it should not return an Nft", async () => {
+      server.resetHandlers(...errorHandler);
+
+      const expectedFeedbackMessage = "NTF COULDN'T UPLOAD";
+
+      const {
+        result,
+        result: {
+          current: { updateNft },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper: wrapWithProvider,
+      });
+
+      const nftToUpdate = nftsMock[1];
+
+      const nft = await updateNft(nftToUpdate);
+
+      expect(nft).toStrictEqual(undefined);
+      expect(result.current.feedbackMessage).toStrictEqual(
+        expectedFeedbackMessage
+      );
+    });
+  });
 });
