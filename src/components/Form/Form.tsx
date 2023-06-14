@@ -88,6 +88,7 @@ const Form = ({
 
       <label htmlFor="description">Description</label>
       <textarea
+        className="description"
         id="description"
         name="description"
         placeholder="Add description (minimum of 20 characters)..."

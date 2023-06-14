@@ -29,7 +29,7 @@ const FormStyled = styled.form`
   }
 
   textarea {
-    min-height: 80px;
+    min-height: 150px;
     margin-bottom: 15px;
   }
 
@@ -41,8 +41,11 @@ const FormStyled = styled.form`
     background-color: ${(props) => props.theme.colors.fifth};
   }
 
-  textarea,
   input:focus {
+    background-color: ${(props) => props.theme.colors.light};
+  }
+
+  .description:focus {
     background-color: ${(props) => props.theme.colors.light};
   }
 
@@ -53,8 +56,12 @@ const FormStyled = styled.form`
     text-align: left;
   }
 
-  textarea::placeholder {
-    padding: 10px 0px;
+  textarea::placeholder:focus {
+    background-color: ${(props) => props.theme.colors.light};
+  }
+
+  textarea {
+    padding: 10px;
   }
 
   @media screen and (min-width: 500px) {
