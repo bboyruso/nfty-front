@@ -39,11 +39,9 @@ const useApi = () => {
       await axios.delete(`${apiUrl}nfts/${id}`);
       dispatch(hideLoading());
       dispatch(setFeedback("NTF WAS DELETED"));
-      return 200;
     } catch {
       dispatch(hideLoading());
       dispatch(setFeedback("NTF NOT DELETED"));
-      return 500;
     }
   };
 
@@ -51,14 +49,16 @@ const useApi = () => {
     try {
       dispatch(hideFeedback());
       dispatch(showLoading());
-      const { data: nfts } = await axios.post(`${apiUrl}nfts`, formData);
+      const { data } = await axios.post<{ nft: NftStructure }>(
+        `${apiUrl}nfts`,
+        formData
+      );
       dispatch(hideLoading());
       dispatch(setFeedback("NTF ADDED CORRECTLY"));
-      return nfts;
+      return data.nft;
     } catch {
       dispatch(hideLoading());
       dispatch(setFeedback("NTF COULDN'T ADD"));
-      return 500;
     }
   };
 
@@ -77,7 +77,7 @@ const useApi = () => {
     [dispatch]
   );
 
-  const updateNft = async (formData: NftStructure) => {
+  const updateNft = async (formData: Partial<NftStructure>) => {
     try {
       dispatch(hideFeedback());
       dispatch(showLoading());
