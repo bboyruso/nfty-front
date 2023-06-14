@@ -52,7 +52,6 @@ const FormStyled = styled.form`
   input,
   textarea,
   textarea::placeholder {
-    padding: 2px 10px;
     text-align: left;
   }
 
