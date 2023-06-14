@@ -45,17 +45,13 @@ const useApi = () => {
     }
   };
 
-  const addNft = async (formData: Partial<NftStructure>) => {
+  const addNft = async (formData: NftStructure) => {
     try {
       dispatch(hideFeedback());
       dispatch(showLoading());
-      const { data } = await axios.post<{ nft: NftStructure }>(
-        `${apiUrl}nfts`,
-        formData
-      );
+      await axios.post(`${apiUrl}nfts`, formData);
       dispatch(hideLoading());
       dispatch(setFeedback("NTF ADDED CORRECTLY"));
-      return data.nft;
     } catch {
       dispatch(hideLoading());
       dispatch(setFeedback("NTF COULDN'T ADD"));
@@ -77,7 +73,7 @@ const useApi = () => {
     [dispatch]
   );
 
-  const updateNft = async (formData: Partial<NftStructure>) => {
+  const updateNft = async (formData: NftStructure) => {
     try {
       dispatch(hideFeedback());
       dispatch(showLoading());

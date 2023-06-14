@@ -11,8 +11,8 @@ const UpdatePage = (): React.ReactElement => {
 
   const id = nft?._id;
 
-  const handleFormSubmit = async (formData: Partial<NftStructure>) => {
-    await updateNft({ ...formData, _id: id });
+  const handleFormSubmit = async (formData: NftStructure) => {
+    await updateNft({ ...formData, _id: id as string });
 
     navigate("/");
   };

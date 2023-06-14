@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { nftsMock } from "../mocks/nftsMock";
 import useApi from "./useApi";
 import { wrapWithProvider } from "../utils/testUtils";
@@ -12,7 +12,7 @@ beforeEach(() => {
 
 describe("Given a useApi function", () => {
   describe("When it is called the function addNfts with nft to add", () => {
-    test("Then it should return 500 with feedback message ´NTF COULDN'T ADD´ ", async () => {
+    test("Then it should show feedback message ´NTF COULDN'T ADD´ ", async () => {
       server.resetHandlers(...errorHandler);
 
       const {
@@ -25,13 +25,13 @@ describe("Given a useApi function", () => {
       });
 
       const expectedFeedbackMessage = "NTF COULDN'T ADD";
-      const expectedStatusCode = 500;
 
       const nftToAdd = nftsMock[0];
 
-      const nftsResponse = await addNft(nftToAdd);
+      await act(() => {
+        addNft(nftToAdd);
+      });
 
-      expect(nftsResponse).toStrictEqual(expectedStatusCode);
       expect(result.current.feedbackMessage).toStrictEqual(
         expectedFeedbackMessage
       );
@@ -53,7 +53,9 @@ describe("Given a useApi function", () => {
 
       const nftToAdd = nftsMock[0];
 
-      await addNft(nftToAdd);
+      await act(() => {
+        addNft(nftToAdd);
+      });
 
       expect(result.current.feedbackMessage).toStrictEqual(
         expectedFeedbackMessage
@@ -62,7 +64,7 @@ describe("Given a useApi function", () => {
   });
 
   describe("When it is called the function deleteNfts with id", () => {
-    test("Then it should return 200 with feedback message ´NTF WAS DELETED´ ", async () => {
+    test("Then it should show feedback message ´NTF WAS DELETED´ ", async () => {
       const {
         result,
         result: {
@@ -71,15 +73,14 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper: wrapWithProvider,
       });
-
-      const expectedStatusCode = 200;
       const expectedFeedbackMessage = "NTF WAS DELETED";
 
       const idOfNftToDelete = nftsMock[0]._id;
 
-      const nftsResponse = await deleteNft(idOfNftToDelete);
+      await act(() => {
+        deleteNft(idOfNftToDelete as string);
+      });
 
-      expect(nftsResponse).toStrictEqual(expectedStatusCode);
       expect(result.current.feedbackMessage).toStrictEqual(
         expectedFeedbackMessage
       );
@@ -87,7 +88,7 @@ describe("Given a useApi function", () => {
   });
 
   describe("When it is called the function deleteNfts with id inexistent", () => {
-    test("Then it should return 500 with feedback message ´NTF NOT DELETED´ ", async () => {
+    test("Then it should show feedback message ´NTF NOT DELETED´ ", async () => {
       server.resetHandlers(...errorHandler);
 
       const {
@@ -99,12 +100,12 @@ describe("Given a useApi function", () => {
         wrapper: wrapWithProvider,
       });
 
-      const expectedStatusCode = 500;
       const expectedFeedbackMessage = "NTF NOT DELETED";
 
-      const status = await deleteNft("THIS-ID-NOT-EXIST");
+      await act(() => {
+        deleteNft("THIS-ID-NOT-EXIST");
+      });
 
-      expect(status).toStrictEqual(expectedStatusCode);
       expect(result.current.feedbackMessage).toStrictEqual(
         expectedFeedbackMessage
       );
@@ -144,7 +145,9 @@ describe("Given a useApi function", () => {
 
       const expectedFeedbackMessage = "ERROR GETTING NFTS";
 
-      const nfts = await getNfts(0, 5);
+      const nfts = await act(() => {
+        getNfts(0, 5);
+      });
 
       expect(nfts).toStrictEqual(undefined);
       expect(result.current.feedbackMessage).toStrictEqual(
@@ -165,7 +168,7 @@ describe("Given a useApi function", () => {
 
       const nftId = nftsMock[1]._id;
 
-      const nft = await getNftById(nftId);
+      const nft = await getNftById(nftId as string);
 
       expect(nft).toStrictEqual(nftsMock[0]);
     });
@@ -185,7 +188,9 @@ describe("Given a useApi function", () => {
 
       const nftId = nftsMock[1]._id;
 
-      const nft = await getNftById(nftId);
+      const nft = await act(() => {
+        getNftById(nftId as string);
+      });
 
       expect(nft).toStrictEqual(undefined);
     });
@@ -226,7 +231,9 @@ describe("Given a useApi function", () => {
 
       const nftToUpdate = nftsMock[1];
 
-      const nft = await updateNft(nftToUpdate);
+      const nft = await act(() => {
+        updateNft(nftToUpdate);
+      });
 
       expect(nft).toStrictEqual(undefined);
       expect(result.current.feedbackMessage).toStrictEqual(

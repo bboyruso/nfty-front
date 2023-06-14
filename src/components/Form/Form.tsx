@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 interface FormProps {
   headingText: string;
-  onFormSubmit: (formData: Partial<NftStructure>) => void;
+  onFormSubmit: (formData: NftStructure) => void;
   nft?: NftStructure;
 }
 
@@ -36,19 +36,13 @@ const Form = ({
     onFormSubmit(formData);
   };
 
-  const urlPattern = new RegExp(
-    /^(https?:\/\/)?((([a-zA-Z\d]([a-zA-Z\d-]{0,61}[a-zA-Z\d])?)\.)+[a-zA-Z]{2,}|((\d{1,3}\.){3}\d{1,3}))(?::\d{2,5})?(\/[-a-zA-Z\d%_.~+]*)*(\?[;&a-zA-Z\d%_.~+=-]*)?(#[-a-zA-Z\d_]*)?$/,
-    "i"
-  );
-
   const isButtonDisabled =
-    formData.author.length < 1 ||
+    formData.author.length < 5 ||
     formData.description.length < 20 ||
     formData.image.length < 1 ||
     formData.title.length < 1 ||
     formData.price < 0.0001 ||
-    /[a-zA-Z]/.test(formData.price.toString()) ||
-    !urlPattern.test(formData.image);
+    /[a-zA-Z]/.test(formData.price.toString());
 
   return (
     <FormStyled>
