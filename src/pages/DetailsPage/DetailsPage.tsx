@@ -51,6 +51,7 @@ const DetailsPage = (): React.ReactElement => {
           text="Delete"
           onClick={() => handleDeleteClick(selectedNft?._id as string)}
         ></Button>
+        <Button text="Modify" onClick={() => navigate(`/update`)}></Button>
       </div>
     </DetailsPageStyled>
   );

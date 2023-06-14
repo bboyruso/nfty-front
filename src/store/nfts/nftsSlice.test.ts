@@ -40,7 +40,7 @@ describe("Given a NftsReducer", () => {
 
       const newState = nftsReducer(
         currentNftsState,
-        deleteNftsActionCreator(id)
+        deleteNftsActionCreator(id as string)
       );
 
       expect(newState).toStrictEqual(expectedNftsState);

@@ -5,6 +5,7 @@ import {
   LazyMainPage,
   LazyNftDetailsPage,
   LazyNotFoundPage,
+  LazyUpdatePage,
 } from "../lazyPages/lazyPages";
 import { Suspense } from "react";
 
@@ -42,6 +43,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense>
             <LazyCreatePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/update",
+        element: (
+          <Suspense>
+            <LazyUpdatePage />
           </Suspense>
         ),
       },

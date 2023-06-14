@@ -22,6 +22,10 @@ export const handlers = [
   rest.post(`${apiUrl}nfts`, (_req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ message: "Nft was added" }));
   }),
+
+  rest.put(`${apiUrl}nfts`, (_req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(nftsMock[1]));
+  }),
 ];
 
 export const errorHandler = [
@@ -39,5 +43,9 @@ export const errorHandler = [
 
   rest.post(`${apiUrl}nfts`, (_req, res, ctx) => {
     return res(ctx.status(500), ctx.json({ message: "Nft couldn't add" }));
+  }),
+
+  rest.put(`${apiUrl}nfts`, (_req, res, ctx) => {
+    return res(ctx.status(500), ctx.json({ message: "Nft couldn't update" }));
   }),
 ];
