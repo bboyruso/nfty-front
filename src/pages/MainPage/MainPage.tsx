@@ -5,6 +5,7 @@ import { loadNftsActionCreator } from "../../store/nfts/nftsSlice";
 import NftsList from "../../components/NftsList/NftsList";
 import MainPageStyled from "./MainPageStyled";
 import Pagination from "../../components/Pagination/Pagination";
+import Filter from "../../components/Filter/Filter";
 
 const MainPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -51,6 +52,7 @@ const MainPage = (): React.ReactElement => {
 
   return (
     <MainPageStyled aria-label="main page">
+      <Filter></Filter>
       <NftsList nfts={nfts} />
       <Pagination
         nextPage={nextPage}
