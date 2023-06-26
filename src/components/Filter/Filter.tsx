@@ -1,12 +1,25 @@
 import Button from "../Button/Button";
-import FilterStyled from "./FiterStyled";
+import FilterStyled from "./FilterStyled";
 
-const Filter = (): React.ReactElement => {
+interface FilterProps {
+  onClickButtonOne: () => void;
+  onClickButtonTwo: () => void;
+  onClickButtonThree: () => void;
+  onClickButtonFour: () => void;
+}
+
+const Filter = ({
+  onClickButtonOne,
+  onClickButtonTwo,
+  onClickButtonThree,
+  onClickButtonFour,
+}: FilterProps): React.ReactElement => {
   return (
     <FilterStyled>
-      <Button text="< 1 ETH" />
-      <Button text="1 - 5 ETH" />
-      <Button text="> 5 ETH" />{" "}
+      <Button onClick={onClickButtonOne} text="< 1 ETH" />
+      <Button onClick={onClickButtonTwo} text="1 - 5 ETH" />
+      <Button onClick={onClickButtonThree} text="> 5 ETH" />
+      <Button onClick={onClickButtonFour} text="All" />
     </FilterStyled>
   );
 };
