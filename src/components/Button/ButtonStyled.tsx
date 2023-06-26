@@ -15,6 +15,15 @@ const ButtonStyled = styled.button`
     opacity: 50%;
     cursor: default;
   }
+
+  @media only screen and (max-width: 340px) {
+    padding: 10px;
+  }
+
+  @media only screen and (max-width: 316px) {
+    padding: 15px;
+    font-size: 20px;
+  }
 `;
 
 export default ButtonStyled;

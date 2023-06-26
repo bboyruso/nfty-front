@@ -33,6 +33,34 @@ const useApi = () => {
     [dispatch]
   );
 
+  const getNftsByPrice = useCallback(
+    async (
+      skip: number,
+      limit: number,
+      maxPrice: number,
+      minPrice: number
+    ): Promise<NftsState | undefined> => {
+      try {
+        dispatch(showLoading());
+        const {
+          data: { nfts, length },
+        } = await axios.get<NftsState>(
+          `${apiUrl}nfts/filter?skip=${skip}&limit=${limit}&min=${minPrice}&max=${maxPrice}`
+        );
+        dispatch(hideLoading());
+        if (length === 0) {
+          dispatch(setFeedback("NTF NOT FIND"));
+          return;
+        }
+        return { nfts, length };
+      } catch {
+        dispatch(hideLoading());
+        dispatch(setFeedback("NTF NOT FIND"));
+      }
+    },
+    [dispatch]
+  );
+
   const deleteNft = async (id: string) => {
     try {
       dispatch(showLoading());
@@ -93,6 +121,7 @@ const useApi = () => {
     addNft,
     getNftById,
     updateNft,
+    getNftsByPrice,
     feedbackMessage,
   };
 };
