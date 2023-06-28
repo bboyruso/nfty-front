@@ -25,6 +25,12 @@ const NavbarStyled = styled.nav`
       display: flex;
     }
   }
+
+  @media (max-width: 500px) {
+    .nav-link {
+      display: none;
+    }
+  }
 `;
 
 export default NavbarStyled;
