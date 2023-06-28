@@ -24,15 +24,15 @@ const BurgerMenu = (): React.ReactElement => {
       </label>
       <div className="mobile-menu__container">
         <ul className="mobile-menu__list">
+          <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
+            Home
+          </NavLink>
           <NavLink
             to="/create"
             className="mobile-menu__link"
             onClick={handleClick}
           >
             Create
-          </NavLink>
-          <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
-            Home
           </NavLink>
           <NavLink
             to="/login"
