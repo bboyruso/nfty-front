@@ -17,3 +17,7 @@ export const LazyNftDetailsPage = lazy(
 export const LazyUpdatePage = lazy(
   () => import("../../pages/UpdatePage/UpdatePage")
 );
+
+export const LazyLoginPage = lazy(
+  () => import("../../pages/LoginPage/LoginPage")
+);

@@ -1,13 +1,11 @@
 import { NavLink } from "react-router-dom";
 import BurgerMenuStyled from "./BurgerMenuStyled";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 const BurgerMenu = (): React.ReactElement => {
-  const [isHidden, setIsHidden] = useState(false);
   const checkboxRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => {
-    setIsHidden(!isHidden);
     if (checkboxRef.current) {
       checkboxRef.current.checked = false;
     }
@@ -26,6 +24,9 @@ const BurgerMenu = (): React.ReactElement => {
       </label>
       <div className="mobile-menu__container">
         <ul className="mobile-menu__list">
+          <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
+            Home
+          </NavLink>
           <NavLink
             to="/create"
             className="mobile-menu__link"
@@ -33,8 +34,12 @@ const BurgerMenu = (): React.ReactElement => {
           >
             Create
           </NavLink>
-          <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
-            Home
+          <NavLink
+            to="/login"
+            className="mobile-menu__link"
+            onClick={handleClick}
+          >
+            Login
           </NavLink>
         </ul>
       </div>

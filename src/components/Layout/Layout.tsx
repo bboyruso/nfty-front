@@ -14,7 +14,6 @@ const Layout = () => {
       {loading && <Loading />}
 
       <Header />
-
       <ContainerStyled>
         {message && <Modal text={message} />}
         <Outlet />
