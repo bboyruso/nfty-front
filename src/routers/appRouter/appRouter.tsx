@@ -2,6 +2,7 @@ import { RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../../components/App/App";
 import {
   LazyCreatePage,
+  LazyLoginPage,
   LazyMainPage,
   LazyNftDetailsPage,
   LazyNotFoundPage,
@@ -51,6 +52,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense>
             <LazyUpdatePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <Suspense>
+            <LazyLoginPage />
           </Suspense>
         ),
       },
