@@ -1,4 +1,8 @@
-# NFTIFY
+# NFTIFY full stack App
+
+Demo : https://nftify-app.netlify.app/
+
+Important : backend is located in a free service render.com that takes about 15 seconds to start, so I ask for your patience in the first load of the App
 
 ## Description
 
