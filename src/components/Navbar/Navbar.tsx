@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import NavbarStyled from "./NavbarStyled";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const Navbar = (): React.ReactElement => {
   return (
@@ -11,6 +12,7 @@ const Navbar = (): React.ReactElement => {
       <NavLink to="/" className="nav-link">
         Home
       </NavLink>
+      <BurgerMenu></BurgerMenu>
     </NavbarStyled>
   );
 };

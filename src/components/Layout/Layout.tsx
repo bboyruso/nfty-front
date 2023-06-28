@@ -12,7 +12,9 @@ const Layout = () => {
   return (
     <>
       {loading && <Loading />}
+
       <Header />
+
       <ContainerStyled>
         {message && <Modal text={message} />}
         <Outlet />
