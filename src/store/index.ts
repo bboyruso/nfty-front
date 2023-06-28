@@ -3,14 +3,15 @@ import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { nftsReducer } from "./nfts/nftsSlice";
-
 import { uiReducer } from "./ui/loadingSlice";
 import { feedbackReducer } from "./ui/feedbackSlice";
+import { userReducer } from "./user/userSlice";
 
 const rootReducer = combineReducers({
   nftsStore: nftsReducer,
   uiStore: uiReducer,
   feedbackStore: feedbackReducer,
+  userStore: userReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

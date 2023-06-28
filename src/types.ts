@@ -26,9 +26,14 @@ export interface NftsSliceState {
   currentNft?: NftStructure;
 }
 
-export interface UserLoginStructure {
+export interface UserStateStructure {
   id: string;
   userName: string;
   token: string;
   isLogged: boolean;
+}
+export interface UserActionPayloadStructure {
+  id: string;
+  userName: string;
+  token: string;
 }
