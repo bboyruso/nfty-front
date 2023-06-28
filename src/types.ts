@@ -25,3 +25,10 @@ export interface NftsSliceState {
   length?: number;
   currentNft?: NftStructure;
 }
+
+export interface UserLoginStructure {
+  id: string;
+  userName: string;
+  token: string;
+  isLogged: boolean;
+}
