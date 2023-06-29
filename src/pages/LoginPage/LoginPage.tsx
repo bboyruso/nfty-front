@@ -1,16 +1,12 @@
-import Button from "../../components/Button/Button";
+import React from "react";
 import LoginPageStyled from "./LoginPageStyled";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
-const LoginPage = () => {
+const LoginPage = (): React.ReactElement => {
   return (
     <LoginPageStyled>
-      <label htmlFor="username">Username</label>
-      <input type="text" placeholder="Enter Username" name="uname" required />
-
-      <label htmlFor="password">Password</label>
-      <input type="password" placeholder="Enter Password" name="psw" required />
-
-      <Button text="Login" />
+      <h1>Welcome to NFTIFY</h1>
+      <LoginForm />
     </LoginPageStyled>
   );
 };

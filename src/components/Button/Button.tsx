@@ -6,6 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
   onClickForm?: (event: React.FormEvent) => void;
   isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 const Button = ({
