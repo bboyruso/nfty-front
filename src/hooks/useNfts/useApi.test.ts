@@ -1,9 +1,9 @@
 import { act, renderHook } from "@testing-library/react";
-import { nftsMock } from "../mocks/nftsMock";
+import { nftsMock } from "../../mocks/nftsMock";
 import useApi from "./useApi";
-import { wrapWithProvider } from "../utils/testUtils";
-import { server } from "../mocks/server";
-import { errorHandler } from "../mocks/handlers";
+import { wrapWithProvider } from "../../utils/testUtils";
+import { server } from "../../mocks/server";
+import { errorHandler } from "../../mocks/handlers";
 import { vi } from "vitest";
 
 beforeEach(() => {

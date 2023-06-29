@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useNfts/useApi";
 import { NftStructure } from "../../types";
 import { useAppSelector } from "../../store";
 

@@ -1,9 +1,9 @@
 import { useCallback } from "react";
-import { NftStructure, NftsState } from "../types";
+import { NftStructure, NftsState } from "../../types";
 import axios from "axios";
-import { useAppDispatch, useAppSelector } from "../store";
-import { hideLoading, showLoading } from "../store/ui/loadingSlice";
-import { setFeedback, hideFeedback } from "../store/ui/feedbackSlice";
+import { useAppDispatch, useAppSelector } from "../../store";
+import { hideLoading, showLoading } from "../../store/ui/loadingSlice";
+import { setFeedback, hideFeedback } from "../../store/ui/feedbackSlice";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
