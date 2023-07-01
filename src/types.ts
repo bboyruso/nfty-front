@@ -47,3 +47,9 @@ export interface UserTokenPayloadStructure {
   name: string;
   id: string;
 }
+
+export interface UseLocalStorageStructure {
+  setLocalStorageItem: (key: string, value: string) => void;
+  removeLocalStorageItem: (key: string) => void;
+  getLocalStorageItem: (key: string) => string | null;
+}

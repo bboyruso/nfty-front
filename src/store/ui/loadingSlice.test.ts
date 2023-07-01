@@ -6,7 +6,7 @@ describe("Given a uiReducer", () => {
       const initialState = { loading: false };
       const newState = uiReducer(initialState, showLoading());
 
-      expect(newState.loading).toStrictEqual(true);
+      expect(newState.isLoading).toStrictEqual(true);
     });
 
     describe("When it receives a action hideLoading", () => {
@@ -14,7 +14,7 @@ describe("Given a uiReducer", () => {
         const initialState = { loading: false };
         const newState = uiReducer(initialState, hideLoading());
 
-        expect(newState.loading).toStrictEqual(false);
+        expect(newState.isLoading).toStrictEqual(false);
       });
     });
   });

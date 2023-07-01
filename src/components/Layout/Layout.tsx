@@ -6,7 +6,7 @@ import { useAppSelector } from "../../store";
 import Modal from "../Modal/Modal";
 
 const Layout = () => {
-  const { loading } = useAppSelector((state) => state.uiStore);
+  const { isLoading: loading } = useAppSelector((state) => state.uiStore);
   const { message } = useAppSelector((state) => state.feedbackStore);
 
   return (
