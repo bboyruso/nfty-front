@@ -1,6 +1,6 @@
 import { UserCredentials } from "../../types";
 import axios from "axios";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch } from "../../store";
 import { hideLoading, showLoading } from "../../store/ui/loadingSlice";
 import { setFeedback } from "../../store/ui/feedbackSlice";
 
@@ -12,9 +12,6 @@ const usersApi = axios.create({
 
 const useUser = () => {
   const dispatch = useAppDispatch();
-  const feedbackMessage = useAppSelector(
-    (state) => state.feedbackStore.message
-  );
 
   const getUserToken = async (
     userCredentials: UserCredentials
@@ -39,7 +36,6 @@ const useUser = () => {
 
   return {
     getUserToken,
-    feedbackMessage,
   };
 };
 

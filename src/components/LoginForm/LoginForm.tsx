@@ -5,12 +5,10 @@ import LoginFormStyled from "./LoginFormStyled";
 
 interface LoginFormProps {
   onLoginFormSubmit: (formData: UserCredentials) => void;
-  isLoading: boolean;
 }
 
 const LoginForm = ({
   onLoginFormSubmit,
-  isLoading,
 }: LoginFormProps): React.ReactElement => {
   const [formData, setFormData] = useState({ username: "", password: "" });
 
@@ -38,6 +36,7 @@ const LoginForm = ({
         placeholder="Enter Username"
         name="username"
         required
+        autoComplete="off"
         value={formData.username}
         onChange={handleInputChange}
       />
@@ -49,15 +48,12 @@ const LoginForm = ({
         placeholder="Enter Password"
         name="password"
         required
+        autoComplete="off"
         value={formData.password}
         onChange={handleInputChange}
       />
 
-      <Button
-        text="Login"
-        isDisabled={isButtonDisabled}
-        isLoading={isLoading}
-      />
+      <Button text="Login" isDisabled={isButtonDisabled} />
     </LoginFormStyled>
   );
 };
