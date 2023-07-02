@@ -28,7 +28,7 @@ export interface NftsSliceState {
 
 export interface UserStateStructure {
   id: string;
-  userName: string;
+  name: string;
   token: string;
   isLogged: boolean;
 }

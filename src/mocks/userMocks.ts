@@ -2,14 +2,14 @@ import { UserStateStructure, UserTokenPayloadStructure } from "../types";
 
 export const emptyUserStateMock: UserStateStructure = {
   id: "",
-  userName: "",
+  name: "",
   token: "",
   isLogged: false,
 };
 
 export const loggedUserStateMock: UserStateStructure = {
   id: "1234",
-  userName: "Admin",
+  name: "Admin",
   token: "this is mock token",
   isLogged: true,
 };
