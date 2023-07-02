@@ -1,4 +1,4 @@
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useNfts/useApi";
 import { useAppDispatch } from "../../store";
 import { deleteNftsActionCreator } from "../../store/nfts/nftsSlice";
 import { NftStructure } from "../../types";

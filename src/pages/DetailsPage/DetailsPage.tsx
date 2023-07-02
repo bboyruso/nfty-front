@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useNfts/useApi";
 import DetailsPageStyled from "./DetailsPageStyled";
 import { loadSelectedNftActionCreator } from "../../store/nfts/nftsSlice";
 import { useNavigate, useParams } from "react-router-dom";

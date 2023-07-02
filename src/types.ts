@@ -25,3 +25,31 @@ export interface NftsSliceState {
   length?: number;
   currentNft?: NftStructure;
 }
+
+export interface UserStateStructure {
+  id: string;
+  name: string;
+  token: string;
+  isLogged: boolean;
+}
+export interface UserActionPayloadStructure {
+  id: string;
+  userName: string;
+  token: string;
+}
+
+export interface UserCredentials {
+  username: string;
+  password: string;
+}
+
+export interface UserTokenPayloadStructure {
+  name: string;
+  id: string;
+}
+
+export interface UseLocalStorageStructure {
+  setLocalStorageItem: (key: string, value: string) => void;
+  removeLocalStorageItem: (key: string) => void;
+  getLocalStorageItem: (key: string) => string | null;
+}

@@ -1,14 +1,31 @@
 import { NavLink } from "react-router-dom";
 import BurgerMenuStyled from "./BurgerMenuStyled";
 import { useRef } from "react";
+import { logoutUserActionCreator } from "../../store/user/userSlice";
+import { setFeedback } from "../../store/ui/feedbackSlice";
+import useLocalStorage from "../../hooks/useLocalStorage/useLocalStorage";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../store";
 
 const BurgerMenu = (): React.ReactElement => {
+  const { removeLocalStorageItem } = useLocalStorage();
+  const dispatch = useDispatch();
   const checkboxRef = useRef<HTMLInputElement>(null);
+  const isAuthenticated = useAppSelector((state) => state.userStore.isLogged);
 
   const handleClick = () => {
     if (checkboxRef.current) {
       checkboxRef.current.checked = false;
     }
+  };
+
+  const handleLogout = () => {
+    removeLocalStorageItem("token");
+    dispatch(logoutUserActionCreator());
+    dispatch(
+      setFeedback("You have been successfully logged out. See you next time!")
+    );
+    handleClick();
   };
 
   return (
@@ -27,20 +44,29 @@ const BurgerMenu = (): React.ReactElement => {
           <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
             Home
           </NavLink>
-          <NavLink
-            to="/create"
-            className="mobile-menu__link"
-            onClick={handleClick}
-          >
-            Create
-          </NavLink>
-          <NavLink
-            to="/login"
-            className="mobile-menu__link"
-            onClick={handleClick}
-          >
-            Login
-          </NavLink>
+
+          {isAuthenticated ? (
+            <>
+              <NavLink
+                to="/create"
+                className="mobile-menu__link"
+                onClick={handleClick}
+              >
+                Create
+              </NavLink>
+              <button className="mobile-menu__link" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <NavLink
+              to="/login"
+              className="mobile-menu__link"
+              onClick={handleClick}
+            >
+              Login
+            </NavLink>
+          )}
         </ul>
       </div>
     </BurgerMenuStyled>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useNfts/useApi";
 import { loadNftsActionCreator } from "../../store/nfts/nftsSlice";
 import NftsList from "../../components/NftsList/NftsList";
 import MainPageStyled from "./MainPageStyled";
