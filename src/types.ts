@@ -43,6 +43,13 @@ export interface UserCredentials {
   password: string;
 }
 
+export interface RegisterUserCredentials {
+  username: string;
+  password: string;
+  name?: string;
+  email: string;
+}
+
 export interface UserTokenPayloadStructure {
   name: string;
   id: string;
