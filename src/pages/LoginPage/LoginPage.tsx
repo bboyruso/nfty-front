@@ -3,7 +3,7 @@ import LoginPageStyled from "./LoginPageStyled";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { UserCredentials } from "../../types";
 import useUser from "../../hooks/useUser/useUser";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "../../hooks/useLocalStorage/useLocalStorage";
 import { loginUserActionCreator } from "../../store/user/userSlice";
 import { useAppDispatch } from "../../store";
@@ -31,7 +31,12 @@ const LoginPage = (): React.ReactElement => {
     <LoginPageStyled>
       <h1>Log in to NFTIFY</h1>
       <LoginForm onLoginFormSubmit={handleLoginFormSubmit} />
-      <h2>{"Don't have an account"}</h2>
+      <span>
+        {"Don't have an account ?  "}
+        <Link to="/register" className="login-link">
+          Create One
+        </Link>
+      </span>
     </LoginPageStyled>
   );
 };

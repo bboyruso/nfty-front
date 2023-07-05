@@ -10,6 +10,10 @@ const RegisterPageStyled = styled.div`
   h1 {
     font-size: larger;
   }
+
+  .login-link {
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 export default RegisterPageStyled;

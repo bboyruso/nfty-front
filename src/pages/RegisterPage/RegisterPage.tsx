@@ -3,6 +3,7 @@ import { RegisterUserCredentials } from "../../types";
 import useUser from "../../hooks/useUser/useUser";
 import RegisterPageStyled from "./RegisterPageStyled";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import { Link } from "react-router-dom";
 
 const LoginPage = (): React.ReactElement => {
   const { registerUser } = useUser();
@@ -15,8 +16,14 @@ const LoginPage = (): React.ReactElement => {
 
   return (
     <RegisterPageStyled>
-      <h1>Register</h1>
+      <h1>Create your NFTIFY account</h1>
       <RegisterForm onRegisterFormSubmit={handleRegisterFormSubmit} />
+      <span>
+        {"Already have an account ?  "}
+        <Link to="/login" className="login-link">
+          Log in
+        </Link>
+      </span>
     </RegisterPageStyled>
   );
 };

@@ -33,7 +33,6 @@ const LoginForm = ({
       <input
         type="text"
         id="username"
-        placeholder="Enter Username"
         name="username"
         required
         autoComplete="off"
@@ -45,7 +44,6 @@ const LoginForm = ({
       <input
         id="password"
         type="password"
-        placeholder="Enter Password"
         name="password"
         required
         autoComplete="off"
