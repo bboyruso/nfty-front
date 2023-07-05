@@ -7,9 +7,9 @@ export const emptyUserStateMock: UserStateStructure = {
   isLogged: false,
 };
 
-export const loggedUserStateMock: UserStateStructure = {
+export const loggedUserStateMock = {
   id: "1234",
-  name: "Admin",
+  userName: "Admin",
   token: "this is mock token",
   isLogged: true,
 };

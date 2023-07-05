@@ -28,7 +28,7 @@ export interface NftsSliceState {
 
 export interface UserStateStructure {
   id: string;
-  name: string;
+  name?: string;
   token: string;
   isLogged: boolean;
 }
@@ -41,6 +41,13 @@ export interface UserActionPayloadStructure {
 export interface UserCredentials {
   username: string;
   password: string;
+}
+
+export interface RegisterUserCredentials {
+  username: string;
+  password: string;
+  name?: string;
+  email: string;
 }
 
 export interface UserTokenPayloadStructure {

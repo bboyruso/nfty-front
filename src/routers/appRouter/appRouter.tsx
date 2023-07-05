@@ -6,6 +6,7 @@ import {
   LazyMainPage,
   LazyNftDetailsPage,
   LazyNotFoundPage,
+  LazyRegisterPage,
   LazyUpdatePage,
 } from "../lazyPages/lazyPages";
 import { Suspense } from "react";
@@ -60,6 +61,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense>
             <LazyLoginPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/register",
+        element: (
+          <Suspense>
+            <LazyRegisterPage />
           </Suspense>
         ),
       },
