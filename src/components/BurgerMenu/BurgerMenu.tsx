@@ -44,6 +44,13 @@ const BurgerMenu = (): React.ReactElement => {
           <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
             Home
           </NavLink>
+          <NavLink
+            to="/register"
+            className="mobile-menu__link"
+            onClick={handleClick}
+          >
+            Register
+          </NavLink>
 
           {isAuthenticated ? (
             <>

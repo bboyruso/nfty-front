@@ -1,4 +1,4 @@
-import { UserCredentials } from "../../types";
+import { RegisterUserCredentials, UserCredentials } from "../../types";
 import axios from "axios";
 import { useAppDispatch } from "../../store";
 import { hideLoading, showLoading } from "../../store/ui/loadingSlice";
@@ -34,8 +34,27 @@ const useUser = () => {
     }
   };
 
+  const registerUser = async (
+    userCredentials: RegisterUserCredentials
+  ): Promise<string | undefined> => {
+    try {
+      dispatch(showLoading());
+      const { data } = await usersApi.post<{ message: string }>(
+        `user/register`,
+        userCredentials
+      );
+      dispatch(hideLoading());
+      dispatch(setFeedback(data.message));
+      return data.message;
+    } catch {
+      dispatch(hideLoading());
+      dispatch(setFeedback("Check register data. Please check and try again"));
+    }
+  };
+
   return {
     getUserToken,
+    registerUser,
   };
 };
 

@@ -21,3 +21,7 @@ export const LazyUpdatePage = lazy(
 export const LazyLoginPage = lazy(
   () => import("../../pages/LoginPage/LoginPage")
 );
+
+export const LazyRegisterPage = lazy(
+  () => import("../../pages/RegisterPage/RegisterPage")
+);
