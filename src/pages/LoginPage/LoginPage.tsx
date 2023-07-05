@@ -29,8 +29,9 @@ const LoginPage = (): React.ReactElement => {
 
   return (
     <LoginPageStyled>
-      <h1>Welcome to NFTIFY</h1>
+      <h1>Log in to NFTIFY</h1>
       <LoginForm onLoginFormSubmit={handleLoginFormSubmit} />
+      <h2>{"Don't have an account"}</h2>
     </LoginPageStyled>
   );
 };
