@@ -1,6 +1,7 @@
 # NFTIFY full stack CRUD App
 
 Demo : https://nftify-app.netlify.app/
+Back end : https://github.com/bboyruso/nftify-back
 
 Important : backend is located in a free service render.com that takes about 15 seconds to start, so I ask for your patience in the first load of the App
 
@@ -12,8 +13,8 @@ Important : backend is located in a free service render.com that takes about 15 
 
 ## Client:
 
-React, Redux, RTK, Styled components
+TypeScript, React, Redux, RTK, Styled components
 
 ## Server:
 
-Node, Express, MongoDB
+TypeScript, Node, Express, MongoDB
