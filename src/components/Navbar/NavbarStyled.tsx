@@ -12,7 +12,6 @@ const NavbarStyled = styled.nav`
     color: ${(props) => props.theme.colors.primary};
     font-size: ${(props) => props.theme.fontSizes.large};
     font-family: "Roboto";
-    font-weight: 700;
     line-height: 27px;
     padding: 10 0px;
     display: flex;
@@ -26,7 +25,7 @@ const NavbarStyled = styled.nav`
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 499px) {
     .nav-link {
       display: none;
     }

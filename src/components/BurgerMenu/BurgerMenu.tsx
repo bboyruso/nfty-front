@@ -41,17 +41,6 @@ const BurgerMenu = (): React.ReactElement => {
       </label>
       <div className="mobile-menu__container">
         <ul className="mobile-menu__list">
-          <NavLink to="/" className="mobile-menu__link" onClick={handleClick}>
-            Home
-          </NavLink>
-          <NavLink
-            to="/register"
-            className="mobile-menu__link"
-            onClick={handleClick}
-          >
-            Register
-          </NavLink>
-
           {isAuthenticated ? (
             <>
               <NavLink
@@ -66,13 +55,22 @@ const BurgerMenu = (): React.ReactElement => {
               </button>
             </>
           ) : (
-            <NavLink
-              to="/login"
-              className="mobile-menu__link"
-              onClick={handleClick}
-            >
-              Login
-            </NavLink>
+            <>
+              <NavLink
+                to="/login"
+                className="mobile-menu__link"
+                onClick={handleClick}
+              >
+                Log in
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="mobile-menu__link"
+                onClick={handleClick}
+              >
+                Sign up
+              </NavLink>
+            </>
           )}
         </ul>
       </div>
