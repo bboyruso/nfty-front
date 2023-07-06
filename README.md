@@ -1,4 +1,4 @@
-# NFTIFY full stack App
+# NFTIFY full stack CRUD App
 
 Demo : https://nftify-app.netlify.app/
 
