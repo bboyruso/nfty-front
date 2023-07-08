@@ -26,11 +26,13 @@ const FormStyled = styled.form`
   input {
     height: 40px;
     margin-bottom: 15px;
+    border-radius: 30px;
   }
 
   textarea {
     min-height: 150px;
     margin-bottom: 15px;
+    border-radius: 20px;
   }
 
   input,
@@ -65,7 +67,6 @@ const FormStyled = styled.form`
 
   @media screen and (min-width: 500px) {
     gap: 20px;
-
     max-width: 400px;
 
     input,

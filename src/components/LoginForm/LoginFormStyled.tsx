@@ -16,10 +16,13 @@ const LoginFormStyled = styled.form`
     border: 2px solid #00000026;
     width: 100%;
     background-color: ${(props) => props.theme.colors.fifth};
+    border-radius: 30px;
   }
 
+  textarea:focus,
   input:focus {
     background-color: ${(props) => props.theme.colors.light};
+    outline: ${(props) => props.theme.colors.light};
   }
 
   label {
@@ -27,7 +30,6 @@ const LoginFormStyled = styled.form`
   }
 
   button {
-    padding: 5px 10px;
     margin-top: 30px;
   }
 `;

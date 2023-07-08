@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   ::after {
     box-sizing: border-box;
   }
-  
+
   body {
 
   min-height: 100vh;
@@ -16,10 +16,9 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: 'Roboto';
+  font-family: 'Roboto',sans-serif;
   font-display: swap;
   vertical-align: baseline;
-
   }
   
   h1,

@@ -22,7 +22,7 @@ const Pagination = ({
       <Button
         text="Next"
         onClick={nextPage}
-        isDisabled={nftLength - skip < limit}
+        isDisabled={nftLength - skip <= limit}
       />
     </PaginationStyled>
   );

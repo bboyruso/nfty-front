@@ -12,6 +12,11 @@ const NftCardStyled = styled.div`
     padding: 15px;
   }
 
+  button:nth-last-child(1) {
+    align-self: center;
+    width: 200px;
+  }
+
   span {
     display: flex;
     align-items: center;

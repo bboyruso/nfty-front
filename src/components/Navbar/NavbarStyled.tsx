@@ -5,12 +5,9 @@ const NavbarStyled = styled.nav`
   gap: 20px;
   font-size: ${(props) => props.theme.fontSizes.medium};
 
-  .active {
-  }
-
   .nav-link {
     color: ${(props) => props.theme.colors.primary};
-    font-size: ${(props) => props.theme.fontSizes.large};
+    font-size: ${(props) => props.theme.fontSizes.medium};
     font-family: "Roboto";
     line-height: 27px;
     padding: 10 0px;
