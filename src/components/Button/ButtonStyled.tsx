@@ -4,15 +4,14 @@ const ButtonStyled = styled.button`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.light};
   font-size: ${(props) => props.theme.fontSizes.medium};
-  font-family: "Roboto";
   font-weight: 100;
   text-align: center;
-  padding: 15px;
-  letter-spacing: 1.1px;
+  padding: 10px 15px;
   box-shadow: 3px 4px 10px #00000096;
+  border-radius: 30px;
 
   &.disabled {
-    opacity: 50%;
+    opacity: 70%;
     cursor: default;
   }
 
@@ -20,8 +19,7 @@ const ButtonStyled = styled.button`
     padding: 10px;
   }
 
-  @media only screen and (max-width: 316px) {
-    padding: 15px;
+  @media only screen and (max-width: 380px) {
     font-size: 20px;
   }
 `;

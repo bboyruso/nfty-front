@@ -100,6 +100,7 @@ const BurgerMenuStyled = styled.nav`
           &__container {
             height: 50%;
             transition-delay: 0s;
+            border-bottom: 1px solid ${(props) => props.theme.colors.primary};
           }
 
           &__btn {

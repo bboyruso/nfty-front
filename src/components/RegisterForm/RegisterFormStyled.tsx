@@ -12,6 +12,7 @@ const RegisterFormStyled = styled.form`
   gap: 20px;
 
   input {
+    border-radius: 30px;
     padding: 10px 10px;
     border: 2px solid #00000026;
     width: 100%;
@@ -20,6 +21,7 @@ const RegisterFormStyled = styled.form`
 
   input:focus {
     background-color: ${(props) => props.theme.colors.light};
+    outline: ${(props) => props.theme.colors.light};
   }
 
   label {
@@ -27,7 +29,6 @@ const RegisterFormStyled = styled.form`
   }
 
   button {
-    padding: 5px 10px;
     margin-top: 30px;
   }
 `;

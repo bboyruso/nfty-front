@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
   box-shadow: 3px 4px 10px #435fc45e;
 
   height: 100px;

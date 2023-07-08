@@ -12,7 +12,6 @@ interface NftCardProps {
 const NftCard = ({
   nft: { title, price, author, image, _id: id },
   isLazy,
-  onDeleteClick,
 }: NftCardProps): React.ReactElement => {
   const navigate = useNavigate();
 
@@ -43,10 +42,7 @@ const NftCard = ({
           {price}
           <h2>ETH</h2>
         </span>
-        <Button
-          text="Delete"
-          onClick={() => onDeleteClick(id as string)}
-        ></Button>
+        <Button text="Read more" onClick={handleOnDetails} />
       </div>
     </NftCardStyled>
   );

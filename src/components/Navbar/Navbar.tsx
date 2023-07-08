@@ -34,10 +34,10 @@ const Navbar = (): React.ReactElement => {
       ) : (
         <>
           <NavLink className="nav-link" to="/login">
-            Log in
+            LOGIN
           </NavLink>
           <NavLink className="nav-link" to="/register">
-            Sign up
+            SIGN UP
           </NavLink>
         </>
       )}
