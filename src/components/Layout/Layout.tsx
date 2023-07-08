@@ -4,6 +4,7 @@ import ContainerStyled from "../shared/ContainerStyled";
 import Loading from "../Loading/Loading";
 import { useAppSelector } from "../../store";
 import Modal from "../Modal/Modal";
+import Footer from "../Footer/Footer";
 
 const Layout = () => {
   const { isLoading: loading } = useAppSelector((state) => state.uiStore);
@@ -18,6 +19,7 @@ const Layout = () => {
         {message && <Modal text={message} />}
         <Outlet />
       </ContainerStyled>
+      <Footer></Footer>
     </>
   );
 };
