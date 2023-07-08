@@ -32,7 +32,6 @@ const FormStyled = styled.form`
   textarea {
     min-height: 150px;
     margin-bottom: 15px;
-    border-radius: 20px;
   }
 
   input,
@@ -45,10 +44,12 @@ const FormStyled = styled.form`
 
   input:focus {
     background-color: ${(props) => props.theme.colors.light};
+    outline: ${(props) => props.theme.colors.light};
   }
 
   .description:focus {
     background-color: ${(props) => props.theme.colors.light};
+    outline: ${(props) => props.theme.colors.light};
   }
 
   input,

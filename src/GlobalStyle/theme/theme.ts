@@ -16,6 +16,7 @@ const theme: DefaultTheme = {
     small: "18px",
     large: "28px",
     medium: "24px",
+    smaller: "16px",
   },
 };
 

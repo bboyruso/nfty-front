@@ -41,7 +41,6 @@ const LoginPage = (): React.ReactElement => {
 
   return (
     <RegisterPageStyled>
-      <h1>Create your NFTIFY account</h1>
       <RegisterForm onRegisterFormSubmit={handleRegisterFormSubmit} />
       <span>
         {"Already have an account ?  "}
