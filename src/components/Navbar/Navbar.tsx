@@ -23,23 +23,23 @@ const Navbar = (): React.ReactElement => {
   return (
     <NavbarStyled>
       {isAuthenticated ? (
-        <>
+        <div className="nav-links">
           <NavLink className="nav-link" to="/create">
-            Create
+            CREATE
           </NavLink>
           <button className="nav-link" onClick={handleLogout}>
-            Logout
+            LOGOUT
           </button>
-        </>
+        </div>
       ) : (
-        <>
+        <div className="nav-links">
           <NavLink className="nav-link" to="/login">
             LOGIN
           </NavLink>
           <NavLink className="nav-link" to="/register">
             SIGN UP
           </NavLink>
-        </>
+        </div>
       )}
       <BurgerMenu></BurgerMenu>
     </NavbarStyled>

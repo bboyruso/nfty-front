@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ModalStyled = styled.button`
+  margin: 0 auto;
   position: fixed;
   top: 40%;
   display: flex;
@@ -19,6 +20,7 @@ const ModalStyled = styled.button`
   color: white;
   padding: 25px;
   background-color: #000000e2;
+  max-width: 300px;
 
   span:nth-child(2) {
     border: 1px solid #ffffff;

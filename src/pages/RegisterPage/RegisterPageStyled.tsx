@@ -6,6 +6,7 @@ const RegisterPageStyled = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  height: 100%;
 
   h1 {
     font-size: larger;

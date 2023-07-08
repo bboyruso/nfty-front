@@ -5,9 +5,15 @@ const NavbarStyled = styled.nav`
   gap: 20px;
   font-size: ${(props) => props.theme.fontSizes.medium};
 
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   .nav-link {
     color: ${(props) => props.theme.colors.primary};
-    font-size: ${(props) => props.theme.fontSizes.medium};
+    font-size: ${(props) => props.theme.fontSizes.small};
     font-family: "Roboto";
     line-height: 27px;
     padding: 10 0px;
